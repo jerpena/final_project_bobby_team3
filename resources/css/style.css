@@ -1,1 +1,19 @@
-
+.card-subtitle {
+  display: flex;
+  font-size: 0.8rem;
+  font-style: italic;
+  justify-content: space-between;
+}
+.card-description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.card {
+  width: 18rem;
+}
+.progress-complete {
+  width: 100%;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: green;
+}
