@@ -1,19 +1,52 @@
 .card-subtitle {
-  display: flex;
   font-size: 0.8rem;
   font-style: italic;
-  justify-content: space-between;
+  margin-top: 0.5rem;
 }
-.card-description {
+.card-subtitle p {
+  margin-bottom: 0.7rem;
+}
+p.card-text {
   font-size: 1rem;
-  margin-bottom: 1rem;
 }
 .card {
   width: 18rem;
 }
+.card-title {
+  margin-bottom: 0.1rem;
+}
+.card-body {
+  padding: 0.2rem;
+}
+.progress-todo {
+  width: 25%;
+  font-weight: 750;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px black;
+  background-color: #6610f2;
+}
+.progress-inprogress {
+  width: 50%;
+  font-weight: 750;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px black;
+  background-color: #f36f03;
+}
+.progress-review {
+  width: 75%;
+  font-weight: 750;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px black;
+  background-color: #0d6efd;
+}
 .progress-complete {
   width: 100%;
-  font-weight: 600;
+  font-weight: 750;
   text-transform: uppercase;
-  background-color: green;
+  text-shadow: 1px 1px 2px black;
+  background-color: #198754;
+}
+.progress {
+  width: 6rem;
+  height: 1rem;
 }
