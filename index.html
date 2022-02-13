@@ -67,118 +67,150 @@
         </button>
         <br>
         <br>
-        <!-- BEGIN TEST CARD LAYOUT -->
-        <div class="list-group">
-            <div class="card list-group-item">
-                <div class="card-body">
-                    <h5 class="card-title">Learn Spanish</h5>
-                    <div class="card-subtitle ">
-                        <p>Assignee: Jeremy Pena</p>
-                        <p>Due: 2/22/22</p>
+        <div id="container">
+            <div class="panel list-group">
+                <!-- BEGIN TEST CARD LAYOUT -->
+                <div class="card list-group-item" data-bs-toggle="collapse" data-bs-target="#task-1"
+                    data-bs-parent="#container">
+                    <div class="card-body">
+                        <h5 class="card-title">Learn
+                            Spanish
+                        </h5>
+                        <div id="task-1" class="collapse">
+                            <div class="card-subtitle ">
+                                <p>Assignee: Jeremy Pena</p>
+                                <p>Due: 2/22/22</p>
+                            </div>
+                            <p class="card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
+                                adipisci
+                                numquam
+                                hic eos itaque unde delectus, off</p>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated progress-complete"
+                                    role="progressbar">Complete</div>
+                            </div>
+                        </div>
                     </div>
-                    <p class="card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est adipisci
-                        numquam
-                        hic eos itaque unde delectus, off</p>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated progress-complete"
-                            role="progressbar">Complete</div>
+                </div>
+                <br>
+                <div class="card list-group-item" data-bs-toggle="collapse" data-bs-target="#task-2"
+                    data-bs-parent="#container">
+                    <div class="card-body">
+                        <h5 class="card-title">Learn Spanish</h5>
+                        <div id="task-2" class="collapse">
+                            <div class="card-subtitle ">
+                                <p>Assignee: Jeremy Pena</p>
+                                <p>Due: 2/22/22</p>
+                            </div>
+                            <p class="card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
+                                adipisci
+                                numquam
+                                hic eos itaque unde delectus, off</p>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated progress-complete"
+                                    role="progressbar">Complete</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!-- END TEST CARD LAYOUT -->
+                <!-- Camrys Card-->
+                <div class="card list-group-item">
+                    <div class="card-body">
+                        <h5 class="card-title">Task Card</h5>
+                        <label for="tcName"> Task Name</label>
+                        <input type="text" class="form-control" id="tcName" name="taskName" disabled
+                            placeholder="Learn CSS">
+                        <label for="desc">Assigned</label>
+                        <input type="text" class="form-control" id="Assigned" name="taskName" disabled
+                            placeholder="Camry">
+                        <label for="Status">Status</label>
+                        <input type="text" class="form-control" id="Status" name="taskName" disabled
+                            placeholder="In Progress">
+                        <label for="DueDate">Due Date:</label>
+                        <input type="text" class="form-control" id="DueDate" name="taskName" disabled
+                            placeholder="03/15/2022">
+                        <label for="Desc">Description</label>
+                        <input type="text" class="form-control" id="Desc" name="taskName" disabled
+                            placeholder="Complete all lessons in the CSS Codecademy module">
+                    </div>
+                </div>
+                <br>
+                <!-- Bradleys Card-->
+                <div class="card list-group-item">
+                    <div class="card-body">
+                        <h5 class="card-title">Task Card</h5>
+                        <label for="Name">Task Name:</label>
+                        <input class="form-control" type="text" placeholder="Add Image File" disabled></input>
+                        <label for="Assigned">Assigned To:</label>
+                        <input class="form-control" type="text" placeholder="Bradley" disabled></input>
+                        <label for="Status">Status:</label>
+                        <input class="form-control" type="text" placeholder="In-Progress" disabled></input>
+                        <label for="DueDate">Due Date</label>
+                        <input class="form-control" type="text" placeholder="02/14/2022" disabled></input>
+                        <label for="Description">Description</label>
+                        <input class="form-control" type="text" placeholder="Add the image file from image folder."
+                            disabled></input>
+                    </div>
+                </div>
+                <br>
+                <!-- Jeremy card 1 -->
+                <div class="card list-group-item">
+                    <div class="card-body">
+                        <h5 class="card-title">Task Card</h5>
+                        <label for="tcTaskName">Task Name:</label>
+                        <input type="text" class="form-control" id="tcTaskName" disabled placeholder="Learn Spanish">
+                        <label for="tcAssigned">Assigned To:</label>
+                        <input type="text" class="form-control" id="tcAssigned" disabled placeholder="Jeremy">
+                        <label for="tcStatus">Status:</label>
+                        <input type="text" class="form-control" id="tcStatus" disabled placeholder="Completed">
+                        <label for="tcDueDate">Due Date:</label>
+                        <input type="text" class="form-control" id="tcDueDate" disabled placeholder="2/22/22">
+                        <label for="tcDescription">Description:</label>
+                        <textarea class="form-control" id="tcDescription" rows="3" name="taskDescription"
+                            placeholder="I want to learn spanish so I can take a trip to Mexico" disabled></textarea>
+                    </div>
+                </div>
+                <br>
+                <!-- Jeremy card 2 -->
+                <div class="card list-group-item">
+                    <div class="card-body">
+                        <h5 class="card-title">Task Card</h5>
+                        <label for="tcTaskName">Task Name:</label>
+                        <input type="text" class="form-control" id="tcTaskName" disabled placeholder="Create Portfolio">
+                        <label for="tcAssigned">Assigned To:</label>
+                        <input type="text" class="form-control" id="tcAssigned" disabled placeholder="Jeremy">
+                        <label for="tcStatus">Status:</label>
+                        <input type="text" class="form-control" id="tcStatus" disabled placeholder="Completed">
+                        <label for="tcDueDate">Due Date:</label>
+                        <input type="text" class="form-control" id="tcDueDate" disabled placeholder="4/22/22">
+                        <label for="tcDescription">Description:</label>
+                        <textarea class="form-control" id="tcDescription" rows="3" name="taskDescription"
+                            placeholder="Make portfolio" disabled></textarea>
+                    </div>
+                </div>
+                <br>
+                <!--  Angela Task Card  -->
+                <div class="card list-group-item">
+                    <div class="card-body">
+                        <h5 class="card-title">Task Card</h5>
+                        <label for="Name">Task Name</label>
+                        <input class="form-control" id="Name" type="text" placeholder="Learn CSS" disabled></input>
+                        <label for="Assigned"> Assigned</label>
+                        <input class="form-control" id="Assigned" type="text" placeholder="Angela" disabled>
+                        </input>
+                        <label for="Status">Status</label>
+                        <input class="form-control" id="Status" type="text" placeholder="To-Do" disabled></input>
+                        <label for="Due Date">Due Date</label>
+                        <input class="form-control" id="Due Date" type="text" placeholder="2/18/22" disabled></input>
+                        <label for="Description">Description</label>
+                        <input class="form-control" id="Description" type="text" placeholder="Use w3schools.com"
+                            disabled></input>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- END TEST CARD LAYOUT -->
-
-        <!-- Camrys Card-->
-        <div id="item1" class="card list-group-item collapse">
-            <div class="card-body">
-                <h5 class="card-title">Task Card</h5>
-                <label for="tcName"> Task Name</label>
-                <input type="text" class="form-control" id="tcName" name="taskName" disabled placeholder="Learn CSS">
-                <label for="desc">Assigned</label>
-                <input type="text" class="form-control" id="Assigned" name="taskName" disabled placeholder="Camry">
-                <label for="Status">Status</label>
-                <input type="text" class="form-control" id="Status" name="taskName" disabled placeholder="In Progress">
-                <label for="DueDate">Due Date:</label>
-                <input type="text" class="form-control" id="DueDate" name="taskName" disabled placeholder="03/15/2022">
-                <label for="Desc">Description</label>
-                <input type="text" class="form-control" id="Desc" name="taskName" disabled
-                    placeholder="Complete all lessons in the CSS Codecademy module">
-            </div>
-        </div>
-        <br>
-        <!-- Bradleys Card-->
-        <div class="card list-group-item">
-            <div class="card-body">
-                <h5 class="card-title">Task Card</h5>
-                <label for="Name">Task Name:</label>
-                <input class="form-control" type="text" placeholder="Add Image File" disabled></input>
-                <label for="Assigned">Assigned To:</label>
-                <input class="form-control" type="text" placeholder="Bradley" disabled></input>
-                <label for="Status">Status:</label>
-                <input class="form-control" type="text" placeholder="In-Progress" disabled></input>
-                <label for="DueDate">Due Date</label>
-                <input class="form-control" type="text" placeholder="02/14/2022" disabled></input>
-                <label for="Description">Description</label>
-                <input class="form-control" type="text" placeholder="Add the image file from image folder."
-                    disabled></input>
-            </div>
-        </div>
-        <br>
-        <!-- Jeremy card 1 -->
-        <div class="card list-group-item">
-            <div class="card-body">
-                <h5 class="card-title">Task Card</h5>
-                <label for="tcTaskName">Task Name:</label>
-                <input type="text" class="form-control" id="tcTaskName" disabled placeholder="Learn Spanish">
-                <label for="tcAssigned">Assigned To:</label>
-                <input type="text" class="form-control" id="tcAssigned" disabled placeholder="Jeremy">
-                <label for="tcStatus">Status:</label>
-                <input type="text" class="form-control" id="tcStatus" disabled placeholder="Completed">
-                <label for="tcDueDate">Due Date:</label>
-                <input type="text" class="form-control" id="tcDueDate" disabled placeholder="2/22/22">
-                <label for="tcDescription">Description:</label>
-                <textarea class="form-control" id="tcDescription" rows="3" name="taskDescription"
-                    placeholder="I want to learn spanish so I can take a trip to Mexico" disabled></textarea>
-            </div>
-        </div>
-        <br>
-        <!-- Jeremy card 2 -->
-        <div class="card list-group-item">
-            <div class="card-body">
-                <h5 class="card-title">Task Card</h5>
-                <label for="tcTaskName">Task Name:</label>
-                <input type="text" class="form-control" id="tcTaskName" disabled placeholder="Create Portfolio">
-                <label for="tcAssigned">Assigned To:</label>
-                <input type="text" class="form-control" id="tcAssigned" disabled placeholder="Jeremy">
-                <label for="tcStatus">Status:</label>
-                <input type="text" class="form-control" id="tcStatus" disabled placeholder="Completed">
-                <label for="tcDueDate">Due Date:</label>
-                <input type="text" class="form-control" id="tcDueDate" disabled placeholder="4/22/22">
-                <label for="tcDescription">Description:</label>
-                <textarea class="form-control" id="tcDescription" rows="3" name="taskDescription"
-                    placeholder="Make portfolio" disabled></textarea>
-            </div>
-        </div>
-        <br>
-        <!--  Angela Task Card  -->
-        <div class="card list-group-item">
-            <div class="card-body">
-                <h5 class="card-title">Task Card</h5>
-                <label for="Name">Task Name</label>
-                <input class="form-control" id="Name" type="text" placeholder="Learn CSS" disabled></input>
-                <label for="Assigned"> Assigned</label>
-                <input class="form-control" id="Assigned" type="text" placeholder="Angela" disabled>
-                </input>
-                <label for="Status">Status</label>
-                <input class="form-control" id="Status" type="text" placeholder="To-Do" disabled></input>
-                <label for="Due Date">Due Date</label>
-                <input class="form-control" id="Due Date" type="text" placeholder="2/18/22" disabled></input>
-                <label for="Description">Description</label>
-                <input class="form-control" id="Description" type="text" placeholder="Use w3schools.com"
-                    disabled></input>
-            </div>
-        </div>
-    </div>
     </div>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
