@@ -17,10 +17,12 @@ p.card-text {
 .card-body {
   padding: 0.2rem;
 }
+
 /* restore top border for list items */
 .list-group-item + .list-group-item {
   border-top-width: 1px;
 }
+
 /* Remove focus from bootstrap buttons */
 .btn:focus {
   outline: none;
