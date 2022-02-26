@@ -16,6 +16,22 @@ p.card-text {
 .card-body {
   padding: 0.2rem;
 }
+
+/* Remove focus from bootstrap buttons */
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+/* Start Bootstrap Chevron Rotation */
+i.active {
+  transform: rotate(-180deg);
+  transition: transform 0.3s;
+}
+.bi {
+  transition: transform 0.3s;
+}
+/* END Bootstrap Chevron Rotation */
+
 /* 
 .progress-todo {
   width: 25%;
