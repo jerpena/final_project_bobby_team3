@@ -1,23 +1,22 @@
 .card-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.77rem;
   font-style: italic;
-  margin-top: 0.5rem;
 }
-.card-subtitle p {
-  margin-bottom: 0.7rem;
-}
+
 p.card-text {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .card {
   width: 18rem;
 }
 .card-title {
-  margin-bottom: 0.1rem;
+  font-size: 1.04rem;
+  font-weight: 500;
 }
 .card-body {
   padding: 0.2rem;
 }
+/* 
 .progress-todo {
   width: 25%;
   font-weight: 750;
@@ -42,6 +41,7 @@ p.card-text {
 .progress-complete {
   width: 100%;
   font-weight: 750;
+  color: white;
   text-transform: uppercase;
   text-shadow: 1px 1px 2px black;
   background-color: #198754;
@@ -49,4 +49,42 @@ p.card-text {
 .progress {
   width: 6rem;
   height: 1rem;
+} */
+
+.task-footer {
+  font-size: 0.76rem;
+}
+
+.task-footer p {
+  margin-bottom: 0;
+}
+
+.task-footer i::before {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  margin-right: 2rem;
+  transition: transform 0.4s;
+  transform: rotate(-180deg);
+}
+
+.task-footer i::after {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  margin-right: 2rem;
+  transition: transform 1s;
+  transform: rotate(-180deg);
+}
+
+.task-status {
+  padding: 0.1rem 1rem;
+  border-radius: 5px;
+  height: 18px;
+  color: rgba(255, 255, 255, 1);
+  background: #198754;
+  font-weight: 750;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  width: 95px;
 }
