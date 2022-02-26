@@ -83,6 +83,7 @@ p.card-text {
   background: #198754;
   font-weight: 750;
   font-size: 0.6rem;
+  text-align: center;
   text-transform: uppercase;
   box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.3);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
