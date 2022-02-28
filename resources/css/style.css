@@ -7,8 +7,8 @@ p.card-text {
   font-size: 0.9rem;
 }
 .card {
-  width: 18rem;
-  margin: 1rem;
+  max-width: 300px;
+  min-width: 280px;
 }
 .card-title {
   font-size: 1.04rem;
@@ -28,6 +28,15 @@ p.card-text {
   outline: none;
   box-shadow: none;
 }
+/* Start Bootstrap Chevron Rotation */
+i.active {
+  transform: rotate(-180deg);
+  transition: transform 0.3s;
+}
+.bi {
+  transition: transform 0.3s;
+}
+/* END Bootstrap Chevron Rotation */
 
 /* 
 .progress-todo {
@@ -72,23 +81,6 @@ p.card-text {
   margin-bottom: 0;
 }
 
-.task-footer i::before {
-  margin-bottom: 0;
-  font-size: 1.2rem;
-  margin-right: 2rem;
-  transition: transform 0.4s;
-  transform: rotate(-180deg);
-}
-
-.task-footer i::after {
-  margin-bottom: 0;
-  font-size: 1.2rem;
-  margin-right: 2rem;
-  transition: transform 1s;
-  transform: rotate(-180deg);
-}
-
-/* TODO: Remove background color from class and use builtins from bootstrap */
 .task-status {
   padding: 0.1rem 1rem;
   border-radius: 5px;
