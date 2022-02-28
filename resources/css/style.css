@@ -7,8 +7,7 @@ p.card-text {
   font-size: 0.9rem;
 }
 .card {
-  max-width: 300px;
-  min-width: 280px;
+  width: 280px;
 }
 .card-title {
   font-size: 1.04rem;
