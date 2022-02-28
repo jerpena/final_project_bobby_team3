@@ -7,7 +7,8 @@ p.card-text {
   font-size: 0.9rem;
 }
 .card {
-  width: 18rem;
+  max-width: 300px;
+  min-width: 280px;
 }
 .card-title {
   font-size: 1.04rem;
@@ -16,6 +17,22 @@ p.card-text {
 .card-body {
   padding: 0.2rem;
 }
+
+/* Remove focus from bootstrap buttons */
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+/* Start Bootstrap Chevron Rotation */
+i.active {
+  transform: rotate(-180deg);
+  transition: transform 0.3s;
+}
+.bi {
+  transition: transform 0.3s;
+}
+/* END Bootstrap Chevron Rotation */
+
 /* 
 .progress-todo {
   width: 25%;
@@ -57,22 +74,6 @@ p.card-text {
 
 .task-footer p {
   margin-bottom: 0;
-}
-
-.task-footer i::before {
-  margin-bottom: 0;
-  font-size: 1.2rem;
-  margin-right: 2rem;
-  transition: transform 0.4s;
-  transform: rotate(-180deg);
-}
-
-.task-footer i::after {
-  margin-bottom: 0;
-  font-size: 1.2rem;
-  margin-right: 2rem;
-  transition: transform 1s;
-  transform: rotate(-180deg);
 }
 
 .task-status {
