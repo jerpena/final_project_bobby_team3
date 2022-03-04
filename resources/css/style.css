@@ -1,3 +1,7 @@
+body{
+  background-color: #337def;
+}
+
 .card-subtitle {
   font-size: 0.77rem;
   font-style: italic;
@@ -93,4 +97,21 @@ i.active {
   box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.3);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   width: 95px;
+}
+
+
+.list-group{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.list-group-item{
+  margin:15px;
+}
+
+h1{
+  text-align: center;
+  color: yellow;
 }

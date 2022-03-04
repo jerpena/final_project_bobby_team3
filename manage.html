@@ -13,6 +13,27 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="manage.html">Manage Task</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav> 
+
+      <h1>Manage Task</h1>
+
     <div class="container-fluid">
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -31,8 +52,8 @@
                             </div>
                             <div class="form-group mt-3">
                                 <label for="taskDescription">Description</label>
-                                <textarea class="form-control" id="taskDescription" rows="3"
-                                    name="taskDescription"></textarea>
+                                <textarea class="form-control" id="taskDescription" rows="2"
+                                    name="taskDescription" maxlength="60"></textarea>
                             </div>
                             <div class="form-group mt-3">
                                 <label for="taskAssignedTo">Assigned To</label>
@@ -61,7 +82,7 @@
             </div>
         </div>
         <!-- Modal End-->
-        <div class="list-group align-items-center">
+        <div class="list-group">
 
             <!-- JEREMY TASK 1 -->
             <div class="card list-group-item">
@@ -125,7 +146,7 @@
                     </div>
                     <div class="task-footer d-flex justify-content-between">
                         <p class='card-subtitle mt-1'>03/15/2022</p>
-                        <span class="task-status align-self-center">in progress</span>
+                        <div class="task-status bg-warning align-self-center">in progress</div>
                     </div>
                 </div>
             </div>
@@ -143,11 +164,12 @@
                         <div class="card-subtitle mt-1 mb-2">
                             <p class="mb-2">Assignee: Bradley</p>
                         </div>
-                        <p class='mb-2 card-text'>Add the image file from image folder</p>
+                        <p class='mb-2 card-text'>Provident nostrum assumenda quod dolorum deserunt adipisci iure.
+                        </p>
                     </div>
                     <div class="task-footer d-flex justify-content-between">
                         <p class='card-subtitle mt-1'>02/14/2022</p>
-                        <span class="task-status align-self-center">in review</span>
+                        <span class="task-status bg-primary align-self-center">in review</span>
                     </div>
                 </div>
             </div>
@@ -169,7 +191,7 @@
                     </div>
                     <div class="task-footer d-flex justify-content-between">
                         <p class='card-subtitle mt-1'>2/18/22</p>
-                        <span class="task-status align-self-center">To-Do</span>
+                        <span class="task-status bg-danger align-self-center">To-Do</span>
                     </div>
                 </div>
             </div>
