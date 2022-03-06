@@ -1,4 +1,4 @@
-body{
+body {
   background-color: #337def;
 }
 
@@ -64,30 +64,18 @@ i.active {
   width: 95px;
 }
 
-.list-group{
+.list-group {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-.list-group-item{
-  margin:15px;
-}
-
-h1{
-  text-align: center;
-  color: yellow;
-}
-
-.list-group{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-
-.list-group-item{
+.list-group-item {
   margin: 15px;
 }
 
+h1 {
+  text-align: center;
+  color: yellow;
+}
