@@ -3,21 +3,43 @@ body {
 }
 
 .card-subtitle {
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
   font-size: 0.77rem;
   font-style: italic;
 }
 
-p.card-text {
+.card-text {
+  margin-bottom: 0;
   font-size: 0.9rem;
 }
+
 .card {
-  width: 280px;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  min-width: 270px;
+  width: auto;
+  /* width: 20vw; need to delete this once grid is done for main page */
 }
+
 .card-title {
   font-size: 1.04rem;
   font-weight: 500;
 }
+
 .card-body {
+  display: flex;
+  flex-direction: column;
+  /* height: 141px; */
+  /* height: 8.9rem; */
   padding: 0.2rem;
 }
 
@@ -42,7 +64,11 @@ i.active {
 /* END Bootstrap Chevron Rotation */
 
 .task-footer {
+  /* margin-top: auto; */
+  display: flex;
+  justify-content: space-between;
   font-size: 0.76rem;
+  align-items: center;
 }
 
 .task-footer p {
@@ -56,6 +82,7 @@ i.active {
   color: rgba(255, 255, 255, 1);
   background: #198754;
   font-weight: 750;
+  font-style: normal;
   font-size: 0.6rem;
   text-align: center;
   text-transform: uppercase;
@@ -64,7 +91,7 @@ i.active {
   width: 95px;
 }
 
-.list-group {
+/* .list-group {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -73,9 +100,131 @@ i.active {
 
 .list-group-item {
   margin: 15px;
-}
+} */
 
 h1 {
   text-align: center;
   color: yellow;
 }
+
+.wrapper {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-template-columns: repeat(4, 20vw); used on bigger screens */
+  gap: 10px;
+  /* grid-auto-rows: 10rem; */
+  justify-content: center;
+  /* margin-left: 2%;
+  margin-right: 2%; */
+}
+.btn-edit {
+  padding: 0.05rem 0.5rem;
+  font-size: 0.675rem;
+  border-radius: 0.2rem;
+}
+
+@media only screen and (max-width: 479px) {
+  .card-text {
+    display: none;
+  }
+  .card-subtitle {
+    display: none;
+  }
+  .task-footer {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .card-text {
+    margin-top: auto;
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (min-width: 531px) {
+  .card-text {
+    margin-top: auto;
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (min-width: 580px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    min-width: 275px;
+  }
+  .card-text {
+    margin-bottom: 5px;
+  }
+  .task-footer {
+    margin-top: auto;
+  }
+}
+
+@media only screen and (min-width: 855px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1283px) {
+  .wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1705px) {
+  .wrapper {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (min-width: 2128px) {
+  .wrapper {
+    grid-template-columns: repeat(5, 1fr);
+    max-width: fit-content;
+  }
+  .card {
+    max-width: 413px;
+  }
+}
+
+/* @media only screen and (min-width: 561px) and (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    width: auto;
+  }
+} */
+
+/* @media only screen and (min-width: 550px) and (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    width: auto;
+  }
+} */
+
+/* @media only screen and (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    width: auto;
+  }
+} */
+
+/* @media only screen and (min-width: 840px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    width: auto;
+  }
+} */
