@@ -13,36 +13,37 @@
 </head>
 
 <body>
-  <h1>Manage Task</h1>
+    <h1>Manage Task</h1>
     <div class="container-fluid">
-        
+
         <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="addTaskModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="addTaskModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Add Task</h5>
+                        <h5 class="modal-title" id="addTaskModalLabel">Add Task</h5>
                     </div>
                     <div class="modal-body">
                         <form role="form" method="POST" action="">
                             <input type="hidden" name="_token" value="">
                             <div class="form-group">
                                 <label for="taskName">Name</label>
-                                <input type="text" class="form-control" id="taskName" name="taskName">
+                                <input type="text" class="form-control" id="taskName" name="taskName" required>
                             </div>
                             <div class="form-group mt-3">
                                 <label for="taskDescription">Description</label>
-                                <textarea class="form-control" id="taskDescription" rows="2"
-                                    name="taskDescription" maxlength="60"></textarea>
+                                <textarea class="form-control" id="taskDescription" rows="2" name="taskDescription"
+                                    maxlength="60" required></textarea>
                             </div>
                             <div class="form-group mt-3">
                                 <label for="taskAssignedTo">Assigned To</label>
-                                <input type="text" class="form-control" id="taskAssignedTo" name="taskAssignedTo">
+                                <input type="text" class="form-control" id="taskAssignedTo" name="taskAssignedTo"
+                                    required>
                             </div>
                             <div class="form-group mt-3">
                                 <label for="taskStatus">Task Status</label>
-                                <select class="form-control" id="taskStatus" name="taskStatus">
+                                <select class="form-control" id="taskStatus" name="taskStatus" required>
                                     <option value="1">TODO</option>
                                     <option value="2">In Progress</option>
                                     <option value="3">Review</option>
@@ -51,7 +52,7 @@
                             </div>
                             <div class="form-group mt-3">
                                 <label for="taskDue">Due Date:</label>
-                                <input type="date" class="form-control" id="taskDue" name="taskDue">
+                                <input type="date" class="form-control" id="taskDue" name="taskDue" required>
                             </div>
                             <div class="form-group mt-4">
                                 <button type="submit" class="btn btn-info">Add Task</button>
@@ -72,7 +73,7 @@
                         <p class="card-title mb-0 align-self-center">Learn Spanish</p>
                         <!-- Edit button -->
                         <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">Edit
+                            data-bs-target="#addTaskModal">Edit
                         </button>
                     </div>
                     <div>
@@ -94,7 +95,7 @@
                         <p class="card-title mb-0 align-self-center">Create Portfolio</p>
                         <!-- Edit button -->
                         <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">Edit
+                            data-bs-target="#addTaskModal">Edit
                         </button>
                     </div>
                     <div>
@@ -116,7 +117,7 @@
                         <p class="card-title mb-0 align-self-center">Learn CSS</p>
                         <!-- Edit button -->
                         <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">Edit
+                            data-bs-target="#addTaskModal">Edit
                         </button>
                     </div>
                     <div>
@@ -138,7 +139,7 @@
                         <p class="card-title mb-0 align-self-center">Add Image File</p>
                         <!-- Edit button -->
                         <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">Edit
+                            data-bs-target="#addTaskModal">Edit
                         </button>
                     </div>
                     <div>
@@ -161,7 +162,7 @@
                         <p class="card-title mb-0 align-self-center">Learn CSS</p>
                         <!-- Edit button -->
                         <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">Edit
+                            data-bs-target="#addTaskModal">Edit
                         </button>
                     </div>
                     <div>

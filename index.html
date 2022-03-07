@@ -15,32 +15,33 @@
 <body>
     <div class="container-fluid">
         <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="addTaskModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="addTaskModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Add Task</h5>
+                        <h5 class="modal-title" id="addTaskModalLabel">Add Task</h5>
                     </div>
                     <div class="modal-body">
                         <form role="form" method="POST" action="#">
                             <input type="hidden" name="_token" value="">
                             <div class="form-group">
                                 <label for="taskName">Name</label>
-                                <input type="text" class="form-control" id="taskName" name="taskName">
+                                <input type="text" class="form-control" id="taskName" name="taskName" required>
                             </div>
                             <div class="form-group mt-3">
                                 <label for="taskDescription">Description</label>
-                                <textarea class="form-control" id="taskDescription" rows="3"
-                                    name="taskDescription"></textarea>
+                                <textarea class="form-control" id="taskDescription" rows="3" name="taskDescription"
+                                    required></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="taskAssignedTo">Assigned To</label>
-                                <input type="text" class="form-control" id="taskAssignedTo" name="taskAssignedTo">
+                                <input type="text" class="form-control" id="taskAssignedTo" name="taskAssignedTo"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="taskStatus">Task Status</label>
-                                <select class="form-control" id="taskStatus" name="taskStatus">
+                                <select class="form-control" id="taskStatus" name="taskStatus" required>
                                     <option value="1">TODO</option>
                                     <option value="2">In Progress</option>
                                     <option value="3">Review</option>
@@ -48,8 +49,8 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="taskDue">Due Date:</label>
-                                <input type="date" class="form-control" id="taskDue" name="taskDue">
+                                <label for="taskDue" required>Due Date:</label>
+                                <input type="date" class="form-control" id="taskDue" name="taskDue" required>
                             </div>
                             <div class="form-group mt-4">
                                 <button type="submit" class="btn btn-info">Add Task</button>
@@ -63,7 +64,7 @@
         <!-- Modal End-->
         <br>
         <!-- Button to trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTaskModal">
             Add Task
         </button>
         <br>
