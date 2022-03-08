@@ -38,8 +38,6 @@ body {
 .card-body {
   display: flex;
   flex-direction: column;
-  /* height: 141px; */
-  /* height: 8.9rem; */
   padding: 0.2rem;
 }
 
@@ -64,7 +62,6 @@ i.active {
 /* END Bootstrap Chevron Rotation */
 
 .task-footer {
-  /* margin-top: auto; */
   display: flex;
   justify-content: space-between;
   font-size: 0.76rem;
@@ -91,16 +88,6 @@ i.active {
   width: 95px;
 }
 
-/* .list-group {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.list-group-item {
-  margin: 15px;
-} */
 
 h1 {
   text-align: center;
@@ -111,12 +98,8 @@ h1 {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  /* grid-template-columns: repeat(4, 20vw); used on bigger screens */
   gap: 10px;
-  /* grid-auto-rows: 10rem; */
   justify-content: center;
-  /* margin-left: 2%;
-  margin-right: 2%; */
 }
 .btn-edit {
   padding: 0.05rem 0.5rem;
@@ -124,6 +107,7 @@ h1 {
   border-radius: 0.2rem;
 }
 
+/* Anything below 479px hide description and user then set margin for footer */
 @media only screen and (max-width: 479px) {
   .card-text {
     display: none;
@@ -192,39 +176,3 @@ h1 {
     max-width: 413px;
   }
 }
-
-/* @media only screen and (min-width: 561px) and (max-width: 768px) {
-  .wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .card {
-    width: auto;
-  }
-} */
-
-/* @media only screen and (min-width: 550px) and (max-width: 768px) {
-  .wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .card {
-    width: auto;
-  }
-} */
-
-/* @media only screen and (max-width: 768px) {
-  .wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .card {
-    width: auto;
-  }
-} */
-
-/* @media only screen and (min-width: 840px) {
-  .wrapper {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .card {
-    width: auto;
-  }
-} */
