@@ -13,166 +13,96 @@
 </head>
 
 <body>
-  <h1>Manage Task</h1>
-    <div class="container-fluid">
-        
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Add Task</h5>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form" method="POST" action="">
-                            <input type="hidden" name="_token" value="">
-                            <div class="form-group">
-                                <label for="taskName">Name</label>
-                                <input type="text" class="form-control" id="taskName" name="taskName">
-                            </div>
-                            <div class="form-group mt-3">
-                                <label for="taskDescription">Description</label>
-                                <textarea class="form-control" id="taskDescription" rows="2"
-                                    name="taskDescription" maxlength="60"></textarea>
-                            </div>
-                            <div class="form-group mt-3">
-                                <label for="taskAssignedTo">Assigned To</label>
-                                <input type="text" class="form-control" id="taskAssignedTo" name="taskAssignedTo">
-                            </div>
-                            <div class="form-group mt-3">
-                                <label for="taskStatus">Task Status</label>
-                                <select class="form-control" id="taskStatus" name="taskStatus">
-                                    <option value="1">TODO</option>
-                                    <option value="2">In Progress</option>
-                                    <option value="3">Review</option>
-                                    <option value="4">Done</option>
-                                </select>
-                            </div>
-                            <div class="form-group mt-3">
-                                <label for="taskDue">Due Date:</label>
-                                <input type="date" class="form-control" id="taskDue" name="taskDue">
-                            </div>
-                            <div class="form-group mt-4">
-                                <button type="submit" class="btn btn-info">Add Task</button>
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal End-->
-        <div class="list-group">
-
+    <h1>Manage Task</h1>
+    <div class="container">
+        <div class="task-list">
             <!-- JEREMY TASK 1 -->
-            <div class="card list-group-item">
+            <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <p class="card-title mb-0 align-self-center">Learn Spanish</p>
                         <!-- Edit button -->
-                        <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">Edit
+                        <button type="button" class="btn btn-outline-dark btn-edit" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i>
                         </button>
                     </div>
-                    <div>
-                        <div class="card-subtitle mt-1 mb-2">
-                            <p class="mb-2">Assignee: Jeremy Pena</p>
-                        </div>
-                        <p class='mb-2 card-text'>Need to learn spanish by this date for my trip to mexico</p>
-                    </div>
-                    <div class="task-footer d-flex justify-content-between align-items-end">
-                        <p class='card-subtitle mt-1'>2/22/22</p>
+                    <p class="card-subtitle">Assignee: Jeremy Pena</p>
+                    <p class='card-text'>Need to learn spanish by this date for my trip to mexico</p>
+                    <div class="task-footer">
+                        <p class='footer-date'>2/22/22</p>
                         <span class="task-status">Complete</span>
                     </div>
                 </div>
             </div>
             <!-- JEREMY TASK 2 -->
-            <div class="card list-group-item">
+            <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <p class="card-title mb-0 align-self-center">Create Portfolio</p>
                         <!-- Edit button -->
-                        <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">Edit
+                        <button type="button" class="btn btn-outline-dark btn-edit" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i>
                         </button>
                     </div>
-                    <div>
-                        <div class="card-subtitle mt-1 mb-2">
-                            <p class="mb-2">Assignee: Jeremy Pena</p>
-                        </div>
-                        <p class='mb-2 card-text'>Make a portfolio site to showcase my skillset</p>
-                    </div>
-                    <div class="task-footer d-flex justify-content-between">
-                        <p class='card-subtitle mt-1'>4/18/22</p>
-                        <span class="task-status align-self-center">Complete</span>
+                    <p class="card-subtitle">Assignee: Jeremy Pena</p>
+                    <p class='card-text'>Make a portfolio site to showcase my skillset</p>
+                    <div class="task-footer">
+                        <p class='footer-date'>4/18/22</p>
+                        <span class="task-status">Complete</span>
                     </div>
                 </div>
             </div>
             <!-- CAMRY TASK -->
-            <div class="card list-group-item">
+            <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <p class="card-title mb-0 align-self-center">Learn CSS</p>
                         <!-- Edit button -->
-                        <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">Edit
+                        <button type="button" class="btn btn-outline-dark btn-edit" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i>
                         </button>
                     </div>
-                    <div>
-                        <div class="card-subtitle mt-1 mb-2">
-                            <p class="mb-2">Assignee: Camry</p>
-                        </div>
-                        <p class='mb-2 card-text'>Complete all lessons in the CSS Codecademy module</p>
-                    </div>
-                    <div class="task-footer d-flex justify-content-between">
-                        <p class='card-subtitle mt-1'>03/15/2022</p>
-                        <div class="task-status bg-warning align-self-center">in progress</div>
+                    <p class="card-subtitle">Assignee: Camry</p>
+                    <p class='card-text'>Complete all lessons in the CSS Codecademy module</p>
+                    <div class="task-footer">
+                        <p class='footer-date'>03/15/2022</p>
+                        <span class="task-status">in progress</span>
                     </div>
                 </div>
             </div>
             <!-- BRADLEY TASK -->
-            <div class="card list-group-item">
+            <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <p class="card-title mb-0 align-self-center">Add Image File</p>
                         <!-- Edit button -->
-                        <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">Edit
+                        <button type="button" class="btn btn-outline-dark btn-edit" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i>
                         </button>
                     </div>
-                    <div>
-                        <div class="card-subtitle mt-1 mb-2">
-                            <p class="mb-2">Assignee: Bradley</p>
-                        </div>
-                        <p class='mb-2 card-text'>Provident nostrum assumenda quod dolorum deserunt adipisci iure.
-                        </p>
-                    </div>
-                    <div class="task-footer d-flex justify-content-between">
-                        <p class='card-subtitle mt-1'>02/14/2022</p>
-                        <span class="task-status bg-primary align-self-center">in review</span>
+                    <p class="card-subtitle">Assignee: Bradley</p>
+                    <p class='card-text'>Provident nostrum assumenda quod dolorum deserunt adipisci iure.</p>
+                    <div class="task-footer">
+                        <p class='footer-date'>02/14/2022</p>
+                        <span class="task-status">in review</span>
                     </div>
                 </div>
             </div>
             <!-- ANGELA TASK -->
-            <div class="card list-group-item">
+            <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <p class="card-title mb-0 align-self-center">Learn CSS</p>
                         <!-- Edit button -->
-                        <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">Edit
+                        <button type="button" class="btn btn-outline-dark btn-edit" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i>
                         </button>
                     </div>
-                    <div>
-                        <div class="card-subtitle mt-1 mb-2">
-                            <p class="mb-2">Assignee: Angela</p>
-                        </div>
-                        <p class='mb-2 card-text'>Use w3schools.com</p>
-                    </div>
-                    <div class="task-footer d-flex justify-content-between">
-                        <p class='card-subtitle mt-1'>2/18/22</p>
-                        <span class="task-status bg-danger align-self-center">To-Do</span>
+                    <p class="card-subtitle">Assignee: Angela</p>
+                    <p class='card-text'>Use w3schools.com</p>
+                    <div class="task-footer">
+                        <p class='footer-date'>2/18/22</p>
+                        <span class="task-status">TODO</span>
                     </div>
                 </div>
             </div>
