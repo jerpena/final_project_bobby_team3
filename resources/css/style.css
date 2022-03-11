@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Code I added */
 body {
   background: url(/resources/Backgroundpic2.jpg);
@@ -10,24 +11,48 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+=======
+body {
+  background-color: #337def;
+>>>>>>> main
 }
 
 .card-subtitle {
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
   font-size: 0.77rem;
   font-style: italic;
 }
 
-p.card-text {
+.card-text {
+  margin-bottom: 0;
   font-size: 0.9rem;
 }
+
 .card {
-  width: 280px;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  min-width: 270px;
+  width: auto;
+  /* width: 20vw; need to delete this once grid is done for main page */
 }
+
 .card-title {
   font-size: 1.04rem;
   font-weight: 500;
 }
+
 .card-body {
+  display: flex;
+  flex-direction: column;
   padding: 0.2rem;
 }
 
@@ -76,43 +101,11 @@ i.active {
 }
 /* END Bootstrap Chevron Rotation */
 
-/* 
-.progress-todo {
-  width: 25%;
-  font-weight: 750;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 2px black;
-  background-color: #6610f2;
-}
-.progress-inprogress {
-  width: 50%;
-  font-weight: 750;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 2px black;
-  background-color: #f36f03;
-}
-.progress-review {
-  width: 75%;
-  font-weight: 750;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 2px black;
-  background-color: #0d6efd;
-}
-.progress-complete {
-  width: 100%;
-  font-weight: 750;
-  color: white;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 2px black;
-  background-color: #198754;
-}
-.progress {
-  width: 6rem;
-  height: 1rem;
-} */
-
 .task-footer {
+  display: flex;
+  justify-content: space-between;
   font-size: 0.76rem;
+  align-items: center;
 }
 
 .task-footer p {
@@ -126,6 +119,7 @@ i.active {
   color: rgba(255, 255, 255, 1);
   background: #198754;
   font-weight: 750;
+  font-style: normal;
   font-size: 0.6rem;
   text-align: center;
   text-transform: uppercase;
@@ -134,6 +128,7 @@ i.active {
   width: 95px;
 }
 
+<<<<<<< HEAD
 .list-group{
   display: flex;
   flex-direction: row;
@@ -141,8 +136,92 @@ i.active {
   /*Code I added/changed */
   flex-wrap: nowrap;
   margin-top: 600px;
+=======
+h1 {
+  text-align: center;
+  color: yellow;
+>>>>>>> main
 }
 
-.list-group-item{
-  margin: 15px;
+.task-list {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  justify-content: center;
+}
+.btn-edit {
+  padding: 0.05rem 0.5rem;
+  font-size: 0.675rem;
+  border-radius: 0.2rem;
+}
+
+/* Anything below 479px hide description and user then set margin for footer */
+@media only screen and (max-width: 479px) {
+  .card-text {
+    display: none;
+  }
+  .card-subtitle {
+    display: none;
+  }
+  .task-footer {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .card-text {
+    margin-top: auto;
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (min-width: 531px) {
+  .card-text {
+    margin-top: auto;
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (min-width: 580px) {
+  .task-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    min-width: 275px;
+  }
+  .card-text {
+    margin-bottom: 5px;
+  }
+  .task-footer {
+    margin-top: auto;
+  }
+}
+
+@media only screen and (min-width: 855px) {
+  .task-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1283px) {
+  .task-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1705px) {
+  .task-list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (min-width: 2128px) {
+  .task-list {
+    grid-template-columns: repeat(5, 1fr);
+    max-width: fit-content;
+  }
+  .card {
+    max-width: 413px;
+  }
 }
