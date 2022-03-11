@@ -1,6 +1,13 @@
 body{
-  background-color: #337def;
+  background-color: #cdcecf;
 }
+
+/* .container-fluid {
+  display: flex;
+  justify-content: right;
+  height: 40px;
+  } */
+
 
 .card-subtitle {
   font-size: 0.77rem;
