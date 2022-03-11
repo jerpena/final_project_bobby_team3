@@ -88,13 +88,12 @@ i.active {
   width: 95px;
 }
 
-
 h1 {
   text-align: center;
   color: yellow;
 }
 
-.wrapper {
+.task-list {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -135,7 +134,7 @@ h1 {
 }
 
 @media only screen and (min-width: 580px) {
-  .wrapper {
+  .task-list {
     grid-template-columns: repeat(2, 1fr);
   }
   .card {
@@ -150,25 +149,25 @@ h1 {
 }
 
 @media only screen and (min-width: 855px) {
-  .wrapper {
+  .task-list {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media only screen and (min-width: 1283px) {
-  .wrapper {
+  .task-list {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media only screen and (min-width: 1705px) {
-  .wrapper {
+  .task-list {
     grid-template-columns: repeat(5, 1fr);
   }
 }
 
 @media only screen and (min-width: 2128px) {
-  .wrapper {
+  .task-list {
     grid-template-columns: repeat(5, 1fr);
     max-width: fit-content;
   }
