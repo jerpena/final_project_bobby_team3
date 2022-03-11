@@ -1,3 +1,17 @@
+/* Code I added */
+body {
+  background: url(/resources/Backgroundpic2.jpg);
+  background-size: cover;
+  background-position: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-subtitle {
   font-size: 0.77rem;
   font-style: italic;
@@ -17,9 +31,34 @@ p.card-text {
   padding: 0.2rem;
 }
 
+/* Code I added */
+.container-card {
+  display: flex;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 600px;
+  top: 400px;
+}
+
+.buttontwo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 650px;
+  top: 400px;
+}
+
+
 /* restore top border for list items */
 .list-group-item + .list-group-item {
   border-top-width: 1px;
+
 }
 
 /* Remove focus from bootstrap buttons */
@@ -99,7 +138,9 @@ i.active {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+  /*Code I added/changed */
+  flex-wrap: nowrap;
+  margin-top: 600px;
 }
 
 .list-group-item{
