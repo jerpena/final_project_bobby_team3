@@ -24,6 +24,20 @@ body {
   font-size: 0.9rem;
 }
 
+.main-buttons {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 25%;
+  margin-bottom: 20px;
+}
+
+.navbar-nav {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: white;
+}
+
 .card {
   word-wrap: break-word;
   background-clip: border-box;
@@ -57,28 +71,12 @@ body {
 }
 
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  left: 600px;
-  top: 400px;
+  margin: 20px;
 }
-
-.buttontwo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  left: 650px;
-  top: 400px;
-}
-
 
 /* restore top border for list items */
 .list-group-item + .list-group-item {
   border-top-width: 1px;
-
 }
 
 /* Remove focus from bootstrap buttons */
