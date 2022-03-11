@@ -14,6 +14,29 @@
 
 <body>
     <div class="container-fluid">
+        <!-- Navigation bar  Bootstrap 5 modified -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img src="resources/images/logo.png">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">Add</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="manage.html">Manage</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End navigation bar -->
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
