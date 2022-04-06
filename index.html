@@ -14,194 +14,182 @@
 
 <body>
     <!-- Beginning of Background Image -->
-    <div class="background">
-        <div class="container-fluid">
-            <!-- Navigation bar  Bootstrap 5 modified -->
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <img src="resources/images/logo.png">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link text-success" aria-current="page" data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop">Add</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-success" href="manage.html">Manage</a>
-                            </li>
-                        </ul>
-                    </div>
+    <div class="container">
+        <!-- Navigation bar  Bootstrap 5 modified -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="resources/images/logo.png"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-success" aria-current="page" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">Add</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success" href="manage.html">Manage</a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
-            <!-- End navigation bar -->
-            <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Add Task</h5>
-                        </div>
-                        <div class="modal-body">
-                            <form role="form" method="POST" action="#">
-                                <input type="hidden" name="_token" value="">
-                                <div class="form-group">
-                                    <label for="taskName">Name</label>
-                                    <input type="text" class="form-control" id="taskName" name="taskName">
-                                </div>
-                                <div class="form-group mt-3">
-                                    <label for="taskDescription">Description</label>
-                                    <textarea class="form-control" id="taskDescription" rows="3"
-                                        name="taskDescription"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="taskAssignedTo">Assigned To</label>
-                                    <input type="text" class="form-control" id="taskAssignedTo" name="taskAssignedTo">
-                                </div>
-                                <div class="form-group">
-                                    <label for="taskStatus">Task Status</label>
-                                    <select class="form-control" id="taskStatus" name="taskStatus">
-                                        <option value="1">TODO</option>
-                                        <option value="2">In Progress</option>
-                                        <option value="3">Review</option>
-                                        <option value="4">Done</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="taskDue">Due Date:</label>
-                                    <input type="date" class="form-control" id="taskDue" name="taskDue">
-                                </div>
-                                <div class="form-group mt-4">
-                                    <button type="submit" class="btn btn-info">Add Task</button>
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Cancel</button>
-                                </div>
-                            </form>
-                        </div>
+            </div>
+        </nav>
+        <!-- End navigation bar -->
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Add Task</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <input type="hidden" name="_token" value="">
+                            <div class="form-group">
+                                <label for="taskName">Name</label>
+                                <input type="text" class="form-control" id="taskName" name="taskName">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="taskDescription">Description</label>
+                                <textarea class="form-control" id="taskDescription" rows="3"
+                                    name="taskDescription"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="taskAssignedTo">Assigned To</label>
+                                <input type="text" class="form-control" id="taskAssignedTo" name="taskAssignedTo">
+                            </div>
+                            <div class="form-group">
+                                <label for="taskStatus">Task Status</label>
+                                <select class="form-control" id="taskStatus" name="taskStatus">
+                                    <option value="1">TODO</option>
+                                    <option value="2">In Progress</option>
+                                    <option value="3">Review</option>
+                                    <option value="4">Done</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="taskDue">Due Date:</label>
+                                <input type="date" class="form-control" id="taskDue" name="taskDue">
+                            </div>
+                            <div class="form-group mt-4">
+                                <button type="submit" class="btn btn-info">Add Task</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <!-- Modal End-->
-            <br>
-            <!-- Button to trigger modal -->
-            <div class="main-buttons">
-                <div class="">
-                    <button type="button" class="button btn btn-primary btn-lg" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop">
-                        Add Task
-                    </button>
-                </div>
-                <div class="">
-                    <a href="manage.html" target="_blank" class="button btn btn-primary btn-lg" role="button"
-                        aria="true">Manage
-                        Task</a>
-                </div>
+        </div>
+        <!-- Modal End-->
+        <br>
+        <!-- Button to trigger modal -->
+        <div class="main-buttons">
+            <div class="">
+                <button type="button" class="button btn btn-primary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">
+                    Add Task
+                </button>
             </div>
-            <div class="task-list">
-                <!-- BEGIN NEW CARD LAYOUT -->
-                <!-- JEREMY TASK 1 -->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <p class="card-title mb-0 align-self-center">Learn Spanish</p>
-                            <!-- Edit button -->
-                            <button type="button" class="btn btn-outline-dark btn-edit" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i>
-                            </button>
-                        </div>
+            <div class="">
+                <a href="manage.html" target="_blank" class="button btn btn-primary btn-lg" role="button"
+                    aria="true">Manage
+                    Task</a>
+            </div>
+        </div>
+        <div class="task-list">
+            <!-- BEGIN NEW CARD LAYOUT -->
+            <!-- JEREMY TASK 1 -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <p class="card-title mb-0 align-self-center">Learn Spanish</p>
+                    </div>
+                    <div id="task-1">
                         <p class="card-subtitle">Assignee: Jeremy Pena</p>
                         <p class='card-text'>Need to learn spanish by this date for my trip to mexico</p>
-                        <div class="task-footer">
-                            <p class='footer-date'>2/22/22</p>
-                            <span class="task-status">Complete</span>
-                        </div>
+                    </div>
+                    <div class="task-footer">
+                        <p class='footer-date'>2/22/22</p>
+                        <span class="task-status">Complete</span>
                     </div>
                 </div>
-                <!-- JEREMY TASK 2 -->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <p class="card-title mb-0 align-self-center">Create Portfolio</p>
-                            <!-- Edit button -->
-                            <button type="button" class="btn btn-outline-dark btn-edit" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i>
-                            </button>
-                        </div>
+            </div>
+            <!-- JEREMY TASK 2 -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <p class="card-title mb-0 align-self-center">Create Portfolio</p>
+                    </div>
+                    <div id="task-2">
                         <p class="card-subtitle">Assignee: Jeremy Pena</p>
                         <p class='card-text'>Make a portfolio site to showcase my skillset</p>
-                        <div class="task-footer">
-                            <p class='footer-date'>4/18/22</p>
-                            <span class="task-status">Complete</span>
-                        </div>
+                    </div>
+                    <div class="task-footer">
+                        <p class='footer-date'>4/18/22</p>
+                        <span class="task-status">Complete</span>
                     </div>
                 </div>
-                <!-- CAMRY TASK -->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <p class="card-title mb-0 align-self-center">Learn CSS</p>
-                            <!-- Edit button -->
-                            <button type="button" class="btn btn-outline-dark btn-edit" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i>
-                            </button>
-                        </div>
+            </div>
+            <!-- CAMRY TASK -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <p class="card-title mb-0 align-self-center">Learn CSS</p>
+                    </div>
+                    <div id="task-3">
                         <p class="card-subtitle">Assignee: Camry</p>
                         <p class='card-text'>Complete all lessons in the CSS Codecademy module</p>
-                        <div class="task-footer">
-                            <p class='footer-date'>03/15/2022</p>
-                            <span class="task-status">in progress</span>
-                        </div>
+                    </div>
+                    <div class="task-footer">
+                        <p class='footer-date'>03/15/2022</p>
+                        <span class="task-status">in progress</span>
                     </div>
                 </div>
-                <!-- BRADLEY TASK -->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <p class="card-title mb-0 align-self-center">Add Image File</p>
-                            <!-- Edit button -->
-                            <button type="button" class="btn btn-outline-dark btn-edit" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i>
-                            </button>
-                        </div>
+            </div>
+            <!-- BRADLEY TASK -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <p class="card-title mb-0 align-self-center">Add Image File</p>
+                    </div>
+                    <div id="task-4">
                         <p class="card-subtitle">Assignee: Bradley</p>
                         <p class='card-text'>Provident nostrum assumenda quod dolorum deserunt adipisci iure.</p>
-                        <div class="task-footer">
-                            <p class='footer-date'>02/14/2022</p>
-                            <span class="task-status">in review</span>
-                        </div>
+                    </div>
+                    <div class="task-footer">
+                        <p class='footer-date'>02/14/2022</p>
+                        <span class="task-status">in review</span>
                     </div>
                 </div>
-                <!-- ANGELA TASK -->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <p class="card-title mb-0 align-self-center">Learn CSS</p>
-                            <!-- Edit button -->
-                            <button type="button" class="btn btn-outline-dark btn-edit" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i>
-                            </button>
-                        </div>
+            </div>
+            <!-- ANGELA TASK -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <p class="card-title mb-0 align-self-center">Learn CSS</p>
+                    </div>
+                    <div id="task-5">
                         <p class="card-subtitle">Assignee: Angela</p>
                         <p class='card-text'>Use w3schools.com</p>
-                        <div class="task-footer">
-                            <p class='footer-date'>2/18/22</p>
-                            <span class="task-status">TODO</span>
-                        </div>
+                    </div>
+                    <div class="task-footer">
+                        <p class='footer-date'>2/18/22</p>
+                        <span class="task-status">TODO</span>
                     </div>
                 </div>
-                <!-- END NEW CARD LAYOUT -->
-
-                <!-- Load script.js -->
-                <script src="resources/js/script.js"></script>
-                <!-- JavaScript Bundle with Popper -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-                    crossorigin="anonymous"></script>
+            </div>
+            <!-- END NEW CARD LAYOUT -->
+        </div>
+    </div>
+    <!-- Load script.js -->
+    <script src="resources/js/script.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

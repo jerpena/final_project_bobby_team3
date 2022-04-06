@@ -37,6 +37,53 @@
             </div>
         </nav>
         <!-- End navigation bar -->
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Task Name</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <input type="hidden" name="_token" value="">
+                            <div class="form-group">
+                                <label for="taskName">Name</label>
+                                <input type="text" class="form-control" id="taskName" name="taskName">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="taskDescription">Description</label>
+                                <textarea class="form-control" id="taskDescription" rows="3"
+                                    name="taskDescription"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="taskAssignedTo">Assigned To</label>
+                                <input type="text" class="form-control" id="taskAssignedTo" name="taskAssignedTo">
+                            </div>
+                            <div class="form-group">
+                                <label for="taskStatus">Task Status</label>
+                                <select class="form-control" id="taskStatus" name="taskStatus">
+                                    <option value="1">TODO</option>
+                                    <option value="2">In Progress</option>
+                                    <option value="3">Review</option>
+                                    <option value="4">Done</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="taskDue">Due Date:</label>
+                                <input type="date" class="form-control" id="taskDue" name="taskDue">
+                            </div>
+                            <div class="form-group mt-4">
+                                <button type="submit" class="btn btn-info">Add Task</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal End-->
         <div class="task-list">
             <!-- JEREMY TASK 1 -->
             <div class="card">
