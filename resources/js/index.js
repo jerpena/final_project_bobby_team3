@@ -1,5 +1,5 @@
-const manageTasks = new TaskManager(0)
-const form = document.querySelector('#taskForm')
+const manageTasks = new TaskManager()
+const form = document.getElementById('taskForm')
 
 const toggleActiveClass = element => {
     let icon = element.querySelector('i')
@@ -9,20 +9,20 @@ const toggleActiveClass = element => {
 
 form.addEventListener('submit', event => {
     event.preventDefault();
-    const name = form.taskName.value;
-    const desc = form.taskDescription.value;
+    const taskName = form.taskName.value;
+    const description = form.taskDescription.value;
     const assignedTo = form.taskAssignedTo.value;
     const dueDate = form.taskDue.value;
     const status = form.taskStatus.value;
-    const errorMsg = document.querySelector('#errorMsg')
+    const errorMsg = document.getElementById('error-msg')
 
 
-    if (!name || !desc || !assignedTo || !dueDate || !status) {
+    if (!taskName || !description || !assignedTo || !dueDate || !status) {
         errorMsg.innerHTML = 'Invalid input in one or more fields.';
         errorMsg.style.display = 'block';
 
     } else {
-        manageTasks.addTask(name, desc, assignedTo, dueDate, status);
+        manageTasks.addTask(taskName, description, assignedTo, dueDate, status);
         manageTasks.render();
         errorMsg.style.display = 'none';
         form.taskName.value = '';
