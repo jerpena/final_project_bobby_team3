@@ -23,11 +23,11 @@ form.addEventListener('submit', event => {
 
     } else {
         manageTasks.addTask(name, desc, assignedTo, dueDate, status);
+        manageTasks.render();
         errorMsg.style.display = 'none';
         form.taskName.value = '';
         form.taskDescription.value = '';
         form.taskAssignedTo.value = '';
         form.taskDue.value = '';
     }
-
 })
