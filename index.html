@@ -14,13 +14,11 @@
 
 <body>
     <!-- Beginning of Background Image -->
-    <div class="background">
-    <div class="container-fluid">
+    <div class="container">
         <!-- Navigation bar  Bootstrap 5 modified -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <img src="resources/images/logo.png">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"></a>
+                <a class="navbar-brand" href="#"><img src="resources/images/logo.png"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,11 +26,11 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" data-bs-toggle="modal"
+                            <a class="nav-link text-success" aria-current="page" data-bs-toggle="modal"
                                 data-bs-target="#staticBackdrop">Add</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="manage.html">Manage</a>
+                            <a class="nav-link text-success" href="manage.html">Manage</a>
                         </li>
                     </ul>
                 </div>
@@ -48,7 +46,7 @@
                         <h5 class="modal-title" id="staticBackdropLabel">Add Task</h5>
                     </div>
                     <div class="modal-body">
-                        <form role="form" method="POST" action="#">
+                        <form role="form">
                             <input type="hidden" name="_token" value="">
                             <div class="form-group">
                                 <label for="taskName">Name</label>
@@ -88,135 +86,110 @@
         <!-- Modal End-->
         <br>
         <!-- Button to trigger modal -->
-        <div class="button">
-        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Add Task
-        </button>
+        <div class="main-buttons">
+            <div class="">
+                <button type="button" class="button btn btn-primary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">
+                    Add Task
+                </button>
+            </div>
+            <div class="">
+                <a href="manage.html" target="_blank" class="button btn btn-primary btn-lg" role="button"
+                    aria="true">Manage
+                    Task</a>
+            </div>
         </div>
-        <div class="buttontwo">
-            <a href="manage.html" target="_blank" class="btn btn-primary btn-lg" role="button" aria="true">Manage Task</a>
-        </div>
-        <br>
-        <br>
-        <!--What I added-->
-        <div class="container-card">
-        <div class="list-group">
+        <div class="task-list">
             <!-- BEGIN NEW CARD LAYOUT -->
-            <!-- JEREMY TASK -->
-            <div class="card list-group-item" data-bs-toggle="collapse" data-bs-target="#task-3"
-                data-bs-parent="#container" onclick="toggleActiveClass(this);">
+            <!-- JEREMY TASK 1 -->
+            <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <p class="card-title mb-0 align-self-center">Learn Spanish</p>
-                        <i class="bi bi-chevron-compact-down align-content-baseline"></i>
                     </div>
-                    <div id="task-3" class="collapse">
-                        <div class="card-subtitle mt-1 mb-2">
-                            <p class="mb-2">Assignee: Jeremy Pena</p>
-                        </div>
-                        <p class='mb-2 card-text'>Need to learn spanish by this date for my trip to mexico</p>
+                    <div id="task-1">
+                        <p class="card-subtitle">Assignee: Jeremy Pena</p>
+                        <p class='card-text'>Need to learn spanish by this date for my trip to mexico</p>
                     </div>
-                    <div class="task-footer d-flex justify-content-between">
-                        <p class='card-subtitle mt-1'>2/22/22</p>
-                        <span class="task-status align-self-center">Complete</span>
+                    <div class="task-footer">
+                        <p class='footer-date'>2/22/22</p>
+                        <span class="task-status">Complete</span>
                     </div>
                 </div>
             </div>
-            <br>
-            <!-- JEREMY TASK -->
-            <div class="card list-group-item" data-bs-toggle="collapse" data-bs-target="#task-4"
-                data-bs-parent="#container" onclick="toggleActiveClass(this);">
+            <!-- JEREMY TASK 2 -->
+            <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <p class="card-title mb-0 align-self-center">Create Portfolio</p>
-                        <i class="bi bi-chevron-compact-down align-content-baseline"></i>
                     </div>
-                    <div id="task-4" class="collapse">
-                        <div class="card-subtitle mt-1 mb-2">
-                            <p class="mb-2">Assignee: Jeremy Pena</p>
-                        </div>
-                        <p class='mb-2 card-text'>Make a portfolio site to showcase my skillset</p>
+                    <div id="task-2">
+                        <p class="card-subtitle">Assignee: Jeremy Pena</p>
+                        <p class='card-text'>Make a portfolio site to showcase my skillset</p>
                     </div>
-                    <div class="task-footer d-flex justify-content-between">
-                        <p class='card-subtitle mt-1'>4/18/22</p>
-                        <span class="task-status align-self-center">Complete</span>
+                    <div class="task-footer">
+                        <p class='footer-date'>4/18/22</p>
+                        <span class="task-status">Complete</span>
                     </div>
                 </div>
             </div>
-            <br>
             <!-- CAMRY TASK -->
-            <div class="card list-group-item" data-bs-toggle="collapse" data-bs-target="#task-1"
-                data-bs-parent="#container" onclick="toggleActiveClass(this);">
+            <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <p class="card-title mb-0 align-self-center">Learn CSS</p>
-                        <i class="bi bi-chevron-compact-down align-content-baseline"></i>
                     </div>
-                    <div id="task-1" class="collapse">
-                        <div class="card-subtitle mt-1 mb-2">
-                            <p class="mb-2">Assignee: Camry</p>
-                        </div>
-                        <p class='mb-2 card-text'>Complete all lessons in the CSS Codecademy module</p>
+                    <div id="task-3">
+                        <p class="card-subtitle">Assignee: Camry</p>
+                        <p class='card-text'>Complete all lessons in the CSS Codecademy module</p>
                     </div>
-                    <div class="task-footer d-flex justify-content-between">
-                        <p class='card-subtitle mt-1'>03/15/2022</p>
-                        <span class="task-status align-self-center">in progress</span>
+                    <div class="task-footer">
+                        <p class='footer-date'>03/15/2022</p>
+                        <span class="task-status">in progress</span>
                     </div>
                 </div>
             </div>
-            <br>
             <!-- BRADLEY TASK -->
-            <div class="card list-group-item" data-bs-toggle="collapse" data-bs-target="#task-2"
-                data-bs-parent="#container" onclick="toggleActiveClass(this);">
+            <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <p class="card-title mb-0 align-self-center">Add Image File</p>
-                        <i class="bi bi-chevron-compact-down align-content-baseline"></i>
                     </div>
-                    <div id="task-2" class="collapse">
-                        <div class="card-subtitle mt-1 mb-2">
-                            <p class="mb-2">Assignee: Bradley</p>
-                        </div>
-                        <p class='mb-2 card-text'>Add the image file from image folder</p>
+                    <div id="task-4">
+                        <p class="card-subtitle">Assignee: Bradley</p>
+                        <p class='card-text'>Provident nostrum assumenda quod dolorum deserunt adipisci iure.</p>
                     </div>
-                    <div class="task-footer d-flex justify-content-between">
-                        <p class='card-subtitle mt-1'>02/14/2022</p>
-                        <span class="task-status align-self-center">in review</span>
+                    <div class="task-footer">
+                        <p class='footer-date'>02/14/2022</p>
+                        <span class="task-status">in review</span>
                     </div>
                 </div>
             </div>
-            <br>
             <!-- ANGELA TASK -->
-            <div class="card list-group-item" data-bs-toggle="collapse" data-bs-target="#task-5"
-                data-bs-parent="#container" onclick="toggleActiveClass(this);">
+            <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <p class="card-title mb-0 align-self-center">Learn CSS</p>
-                        <i class="bi bi-chevron-compact-down align-content-baseline"></i>
                     </div>
-                    <div id="task-5" class="collapse">
-                        <div class="card-subtitle mt-1 mb-2">
-                            <p class="mb-2">Assignee: Angela</p>
-                        </div>
-                        <p class='mb-2 card-text'>Use w3schools.com</p>
+                    <div id="task-5">
+                        <p class="card-subtitle">Assignee: Angela</p>
+                        <p class='card-text'>Use w3schools.com</p>
                     </div>
-                    <div class="task-footer d-flex justify-content-between">
-                        <p class='card-subtitle mt-1'>2/18/22</p>
-                        <span class="task-status align-self-center">To-Do</span>
+                    <div class="task-footer">
+                        <p class='footer-date'>2/18/22</p>
+                        <span class="task-status">TODO</span>
                     </div>
                 </div>
             </div>
-            </div>   
-            </div>     
-            <br>
             <!-- END NEW CARD LAYOUT -->
-
-            <!-- Load script.js -->
-            <script src="resources/js/script.js"></script>
-            <!-- JavaScript Bundle with Popper -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-                crossorigin="anonymous"></script>
+        </div>
+    </div>
+    <!-- Load script.js -->
+    <script src="resources/js/script.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
