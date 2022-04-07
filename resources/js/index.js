@@ -1,4 +1,4 @@
-const manageTasks = new taskManager(0)
+const manageTasks = new TaskManager(0)
 const form = document.querySelector('#taskForm')
 
 const toggleActiveClass = element => {
