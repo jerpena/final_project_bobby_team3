@@ -1,29 +1,84 @@
+/* Code I added */
 body {
-  background-color: #337def;
+  background: url(/resources/Backgroundpic2.jpg);
+  background-size: cover;
+  background-position: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-subtitle {
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
   font-size: 0.77rem;
   font-style: italic;
 }
 
-p.card-text {
+.card-text {
+  margin-bottom: 0;
   font-size: 0.9rem;
 }
+
 .card {
-  width: 280px;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  min-width: 270px;
+  width: auto;
+  /* width: 20vw; need to delete this once grid is done for main page */
 }
+
 .card-title {
   font-size: 1.04rem;
   font-weight: 500;
 }
+
 .card-body {
+  display: flex;
+  flex-direction: column;
   padding: 0.2rem;
 }
+
+/* Code I added */
+.container-card {
+  display: flex;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 600px;
+  top: 400px;
+}
+
+.buttontwo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 650px;
+  top: 400px;
+}
+
 
 /* restore top border for list items */
 .list-group-item + .list-group-item {
   border-top-width: 1px;
+
 }
 
 /* Remove focus from bootstrap buttons */
@@ -42,7 +97,10 @@ i.active {
 /* END Bootstrap Chevron Rotation */
 
 .task-footer {
+  display: flex;
+  justify-content: space-between;
   font-size: 0.76rem;
+  align-items: center;
 }
 
 .task-footer p {
@@ -56,6 +114,7 @@ i.active {
   color: rgba(255, 255, 255, 1);
   background: #198754;
   font-weight: 750;
+  font-style: normal;
   font-size: 0.6rem;
   text-align: center;
   text-transform: uppercase;
@@ -64,34 +123,90 @@ i.active {
   width: 95px;
 }
 
-.list-group {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.list-group-item {
-  margin: 15px;
-}
-
 h1 {
   text-align: center;
   color: yellow;
 }
 
-.list-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+.task-list {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  justify-content: center;
+}
+.btn-edit {
+  padding: 0.05rem 0.5rem;
+  font-size: 0.675rem;
+  border-radius: 0.2rem;
 }
 
-.list-group-item {
-  margin: 15px;
+/* Anything below 479px hide description and user then set margin for footer */
+@media only screen and (max-width: 479px) {
+  .card-text {
+    display: none;
+  }
+  .card-subtitle {
+    display: none;
+  }
+  .task-footer {
+    margin-top: 10px;
+  }
 }
 
-#errorMsg {
-  display: none;
-  margin-top: 10px;
+@media only screen and (max-width: 530px) {
+  .card-text {
+    margin-top: auto;
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (min-width: 531px) {
+  .card-text {
+    margin-top: auto;
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (min-width: 580px) {
+  .task-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    min-width: 275px;
+  }
+  .card-text {
+    margin-bottom: 5px;
+  }
+  .task-footer {
+    margin-top: auto;
+  }
+}
+
+@media only screen and (min-width: 855px) {
+  .task-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1283px) {
+  .task-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1705px) {
+  .task-list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (min-width: 2128px) {
+  .task-list {
+    grid-template-columns: repeat(5, 1fr);
+    max-width: fit-content;
+  }
+  .card {
+    max-width: 413px;
+  }
 }
