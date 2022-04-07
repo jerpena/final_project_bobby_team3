@@ -1,3 +1,7 @@
+const editButtonHTML = `<button type="button" class="btn btn-outline-dark btn-edit" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i>
+                        </button>`
+
 const createTaskHTML = (id, taskName, description, assignedTo, dueDate, status) => {
     return `<div class="card">
 <div class="card-body">

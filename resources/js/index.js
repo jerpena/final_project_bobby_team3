@@ -6,8 +6,7 @@ const toggleActiveClass = element => {
     icon.classList.toggle('active');
 }
 
-
-form.addEventListener('submit', event => {
+const validFormFieldInput = event => {
     event.preventDefault();
     const taskName = form.taskName.value;
     const description = form.taskDescription.value;
@@ -30,4 +29,8 @@ form.addEventListener('submit', event => {
         form.taskAssignedTo.value = '';
         form.taskDue.value = '';
     }
-})
+}
+
+
+
+form.addEventListener('submit', validFormFieldInput);
