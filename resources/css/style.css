@@ -13,6 +13,11 @@ body {
   box-sizing: border-box;
 }
 
+#error-msg {
+  display: none;
+  margin-top: 1.5rem;
+}
+
 .card-subtitle {
   margin-bottom: 0.25rem;
   margin-top: 0.25rem;
@@ -37,6 +42,10 @@ body {
   font-weight: 600;
   font-size: 1.2rem;
   color: white;
+}
+
+.nav-item.active {
+  text-decoration: underline;
 }
 
 .card {
@@ -74,26 +83,6 @@ body {
 .button {
   margin: 20px;
 }
-
-/* restore top border for list items */
-.list-group-item + .list-group-item {
-  border-top-width: 1px;
-}
-
-/* Remove focus from bootstrap buttons */
-.btn:focus {
-  outline: none;
-  box-shadow: none;
-}
-/* Start Bootstrap Chevron Rotation */
-i.active {
-  transform: rotate(-180deg);
-  transition: transform 0.3s;
-}
-.bi {
-  transition: transform 0.3s;
-}
-/* END Bootstrap Chevron Rotation */
 
 .task-footer {
   display: flex;
@@ -138,6 +127,7 @@ h1 {
   gap: 10px;
   justify-content: center;
 }
+
 .btn-edit {
   padding: 0.05rem 0.5rem;
   font-size: 0.675rem;
@@ -149,14 +139,13 @@ h1 {
   .card-text {
     display: none;
   }
+
   .card-subtitle {
     display: none;
   }
+
   .task-footer {
     margin-top: 10px;
-  }
-  i {
-    display: none;
   }
 }
 
@@ -178,12 +167,15 @@ h1 {
   .task-list {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .card {
     min-width: 275px;
   }
+
   .card-text {
     margin-bottom: 5px;
   }
+
   .task-footer {
     margin-top: auto;
   }
@@ -212,6 +204,7 @@ h1 {
     grid-template-columns: repeat(5, 1fr);
     max-width: fit-content;
   }
+
   .card {
     max-width: 413px;
   }

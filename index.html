@@ -25,6 +25,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link text-success" href="index.html">Home</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-success" aria-current="page" data-bs-toggle="modal"
                                 data-bs-target="#staticBackdrop">Add</a>
@@ -47,9 +50,8 @@
                     </div>
                     <div class="modal-body">
                         <form role="form" id='taskForm'>
-                            <input type="hidden" name="_token" value="">
                             <div class="form-group">
-                                <label for="taskName">Name</label>
+                                <label for="taskName">Task Name</label>
                                 <input type="text" class="form-control" id="taskName" name="taskName">
                             </div>
                             <div class="form-group mt-3">
@@ -73,7 +75,7 @@
                             <div class="form-group">
                                 <label for="taskDue">Due Date:</label>
                                 <input type="date" class="form-control" id="taskDue" name="taskDue">
-                                <p id="errorMsg" name='errorMsg' class="alert alert-danger"></p>
+                                <p id="error-msg" name='error-msg' class="alert alert-danger"></p>
                             </div>
                             <div class="form-group mt-4">
                                 <button type="submit" class="btn btn-info">Add Task</button>
@@ -85,7 +87,6 @@
             </div>
         </div>
         <!-- Modal End-->
-        <br>
         <!-- Button to trigger modal -->
         <div class="main-buttons">
             <div class="">
@@ -95,12 +96,11 @@
                 </button>
             </div>
             <div class="">
-                <a href="manage.html" target="_blank" class="button btn btn-primary btn-lg" role="button"
-                    aria="true">Manage
+                <a href="manage.html" class="button btn btn-primary btn-lg" role="button" aria="true">Manage
                     Task</a>
             </div>
         </div>
-        <div class = "task-list" id = "task-list">
+        <div class="task-list" id="task-list">
             <!-- BEGIN NEW CARD LAYOUT -->
             <!-- JEREMY TASK 1 -->
             <div class="card">
@@ -185,7 +185,7 @@
             <!-- END NEW CARD LAYOUT -->
         </div>
     </div>
-    <!-- Load script.js -->
+    <!-- Load  taskmanager -->
     <script src="resources/js/taskManager.js"></script>
     <script src="resources/js/index.js"></script>
     <!-- JavaScript Bundle with Popper -->
