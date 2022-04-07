@@ -1,4 +1,3 @@
-import { taskManager } from './taskManager.js'
 const manageTasks = new taskManager(0)
 const form = document.querySelector('#taskForm')
 

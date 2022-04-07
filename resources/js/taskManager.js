@@ -1,7 +1,3 @@
-const createCard = (name, desc, assignedTo, due, status) => {
-
-}
-
 class taskManager {
     constructor(currentId = 0) {
         this._tasks = []
@@ -22,5 +18,3 @@ class taskManager {
         this._tasks.push(newTask);
     }
 }
-
-export { taskManager };
