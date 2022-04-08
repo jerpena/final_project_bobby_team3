@@ -34,3 +34,18 @@ const validFormFieldInput = event => {
 
 
 form.addEventListener('submit', validFormFieldInput);
+
+const taskListDiv = document.querySelector("#task-list");
+taskListDiv.addEventListener('click', (event) =>{
+
+   if(event.target.classList.contains('done-button')){
+       const parentTask = event.target.parentElement.parentElement.parentElement;
+       const taskId = Number(parentTask.dataset.taskId);
+        const task = manageTasks.getTaskById(taskId)
+        task.status = "DONE";
+        manageTasks.render();
+        
+     console.log(parentTask);
+   }
+});
+

@@ -209,3 +209,8 @@ h1 {
     max-width: 413px;
   }
 }
+
+.done-button.invisible{
+  display: none;
+}
+

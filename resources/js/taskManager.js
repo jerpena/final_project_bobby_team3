@@ -3,18 +3,34 @@ const editButtonHTML = `<button type="button" class="btn btn-outline-dark btn-ed
                         </button>`
 
 const createTaskHTML = (id, taskName, description, assignedTo, dueDate, status) => {
-    return `<div class="card">
+   let backgroundColor;
+   switch(status){
+       case "todo": 
+        backgroundColor ="bg-primary";
+        break;
+       case "inProgress": 
+        backgroundColor ="bg-warning";
+        break;
+       case "review": 
+        backgroundColor ="bg-danger";
+        break;
+       case "done": 
+        backgroundColor ="bg-sucess";
+        break;
+   }
+    return `<div class="card" data-task-id = "${id}">
 <div class="card-body">
     <div class="d-flex justify-content-between">
         <p class="card-title mb-0 align-self-center">${taskName}</p>
+        <button class = "done-button ${status !== 'DONE' ? 'visible' : 'invisible'}"> Mark As Done </button>
     </div>
-    <div id="task-${id}">
+    <div>
         <p class="card-subtitle">Assignee: ${assignedTo}</p>
         <p class='card-text'>${description}</p>
     </div>
     <div class="task-footer">
         <p class='footer-date'>${dueDate}</p>
-        <span class="task-status">${status}</span>
+        <span class="task-status ${backgroundColor}">${status}</span>
     </div>
 </div>
 </div>
@@ -55,6 +71,21 @@ class TaskManager {
         const tasksHtml = tasksHtmlList.join('\n')
         document.getElementById('task-list').innerHTML = tasksHtml
     }
+
+    getTaskById(taskId){
+        let foundTask;
+        for(let  i=0; i<this._tasks.length; i++ ){
+            let task = this._tasks[i];
+            if(task.id === taskId){
+                foundTask = task;
+            }
+            
+        }
+        return foundTask;
+    }
+
+    
+
     get tasks() {
         return this._tasks
     }
