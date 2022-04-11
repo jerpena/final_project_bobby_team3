@@ -3,21 +3,21 @@ const editButtonHTML = `<button type="button" class="btn btn-outline-dark btn-ed
                         </button>`
 
 const createTaskHTML = (id, taskName, description, assignedTo, dueDate, status) => {
-   let backgroundColor;
-   switch(status){
-       case "todo": 
-        backgroundColor ="bg-primary";
-        break;
-       case "inProgress": 
-        backgroundColor ="bg-warning";
-        break;
-       case "review": 
-        backgroundColor ="bg-danger";
-        break;
-       case "done": 
-        backgroundColor ="bg-sucess";
-        break;
-   }
+    let backgroundColor;
+    switch (status) {
+        case "todo":
+            backgroundColor = "bg-primary";
+            break;
+        case "inProgress":
+            backgroundColor = "bg-warning";
+            break;
+        case "review":
+            backgroundColor = "bg-danger";
+            break;
+        case "done":
+            backgroundColor = "bg-sucess";
+            break;
+    }
     return `<div class="card" data-task-id = "${id}">
 <div class="card-body">
     <div class="d-flex justify-content-between">
@@ -72,19 +72,36 @@ class TaskManager {
         document.getElementById('task-list').innerHTML = tasksHtml
     }
 
-    getTaskById(taskId){
+    getTaskById(taskId) {
         let foundTask;
-        for(let  i=0; i<this._tasks.length; i++ ){
+        for (let i = 0; i < this._tasks.length; i++) {
             let task = this._tasks[i];
-            if(task.id === taskId){
+            if (task.id === taskId) {
                 foundTask = task;
             }
-            
+
         }
         return foundTask;
     }
 
-    
+    save() {
+        console.log('save method executed')
+        const tasksJson = JSON.stringify(this._tasks);
+        localStorage.setItem('tasks', tasksJson);
+        const currentId = this._currentId.toString()
+        localStorage.setItem('currentId', currentId);
+    }
+
+    load() {
+        if (localStorage.getItem('tasks')) {
+            const tasksJson = localStorage.getItem('tasks');
+            this._tasks = JSON.parse(tasksJson);
+        }
+        if (localStorage.getItem('currentId')) {
+            const currentId = localStorage.getItem('currentId');
+            this._currentId = Number(JSON.parse(currentId))
+        }
+    }
 
     get tasks() {
         return this._tasks

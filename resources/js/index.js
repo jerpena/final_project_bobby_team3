@@ -1,4 +1,6 @@
 const manageTasks = new TaskManager()
+manageTasks.load();
+manageTasks.render();
 const form = document.getElementById('taskForm')
 
 const toggleActiveClass = element => {
@@ -23,6 +25,7 @@ const validFormFieldInput = event => {
     } else {
         manageTasks.addTask(taskName, description, assignedTo, dueDate, status);
         manageTasks.render();
+        manageTasks.save();
         errorMsg.style.display = 'none';
         form.taskName.value = '';
         form.taskDescription.value = '';
@@ -36,16 +39,17 @@ const validFormFieldInput = event => {
 form.addEventListener('submit', validFormFieldInput);
 
 const taskListDiv = document.querySelector("#task-list");
-taskListDiv.addEventListener('click', (event) =>{
+taskListDiv.addEventListener('click', (event) => {
 
-   if(event.target.classList.contains('done-button')){
-       const parentTask = event.target.parentElement.parentElement.parentElement;
-       const taskId = Number(parentTask.dataset.taskId);
+    if (event.target.classList.contains('done-button')) {
+        const parentTask = event.target.parentElement.parentElement.parentElement;
+        const taskId = Number(parentTask.dataset.taskId);
         const task = manageTasks.getTaskById(taskId)
         task.status = "DONE";
         manageTasks.render();
-        
-     console.log(parentTask);
-   }
+
+        console.log(parentTask);
+    }
+    manageTasks.save();
 });
 
