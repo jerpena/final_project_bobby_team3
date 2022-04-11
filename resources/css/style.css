@@ -210,7 +210,6 @@ h1 {
   }
 }
 
-.done-button.invisible{
+.invisible {
   display: none;
 }
-

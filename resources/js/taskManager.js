@@ -23,6 +23,7 @@ const createTaskHTML = (id, taskName, description, assignedTo, dueDate, status) 
     <div class="d-flex justify-content-between">
         <p class="card-title mb-0 align-self-center">${taskName}</p>
         <button class = "done-button ${status !== 'DONE' ? 'visible' : 'invisible'}"> Mark As Done </button>
+        <button class="btn btn-outline-danger delete-button ${status === 'DONE' ? 'visible' : 'invisible'}">Delete</button>
     </div>
     <div>
         <p class="card-subtitle">Assignee: ${assignedTo}</p>
@@ -101,6 +102,16 @@ class TaskManager {
             const currentId = localStorage.getItem('currentId');
             this._currentId = Number(JSON.parse(currentId))
         }
+    }
+
+    deleteTask(taskId) {
+        const newTasks = [];
+
+        this._tasks.forEach(task => {
+            if (task.id !== taskId) newTasks.push(task)
+        })
+
+        this._tasks = newTasks;
     }
 
     get tasks() {

@@ -1,6 +1,6 @@
 const manageTasks = new TaskManager()
-manageTasks.load();
-manageTasks.render();
+// manageTasks.load();
+// manageTasks.render();
 const form = document.getElementById('taskForm')
 
 const toggleActiveClass = element => {
@@ -46,10 +46,17 @@ taskListDiv.addEventListener('click', (event) => {
         const taskId = Number(parentTask.dataset.taskId);
         const task = manageTasks.getTaskById(taskId)
         task.status = "DONE";
+        manageTasks.save();
         manageTasks.render();
-
-        console.log(parentTask);
     }
-    manageTasks.save();
+
+    if (event.target.classList.contains('delete-button')) {
+        const parentTask = event.target.parentElement.parentElement.parentElement;
+        const taskId = Number(parentTask.dataset.taskId);
+        manageTasks.deleteTask(taskId);
+        manageTasks.save();
+        manageTasks.render();
+    }
+
 });
 
