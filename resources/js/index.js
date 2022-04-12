@@ -1,6 +1,6 @@
 const manageTasks = new TaskManager()
-// manageTasks.load();
-// manageTasks.render();
+manageTasks.load();
+manageTasks.render();
 const form = document.getElementById('taskForm')
 
 const toggleActiveClass = element => {

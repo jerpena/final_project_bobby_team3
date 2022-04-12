@@ -22,7 +22,7 @@ const createTaskHTML = (id, taskName, description, assignedTo, dueDate, status) 
 <div class="card-body">
     <div class="d-flex justify-content-between">
         <p class="card-title mb-0 align-self-center">${taskName}</p>
-        <button class = "done-button ${status !== 'DONE' ? 'visible' : 'invisible'}"> Mark As Done </button>
+        <button class = "done-button btn btn-outline-success ${status !== 'DONE' ? 'visible' : 'invisible'}">Mark Done</button>
         <button class="btn btn-outline-danger delete-button ${status === 'DONE' ? 'visible' : 'invisible'}">Delete</button>
     </div>
     <div>
@@ -86,7 +86,6 @@ class TaskManager {
     }
 
     save() {
-        console.log('save method executed')
         const tasksJson = JSON.stringify(this._tasks);
         localStorage.setItem('tasks', tasksJson);
         const currentId = this._currentId.toString()
