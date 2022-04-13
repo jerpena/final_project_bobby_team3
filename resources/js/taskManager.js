@@ -2,8 +2,12 @@ const editButtonHTML = `<button type="button" class="btn btn-outline-dark btn-ed
                             data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i>
                         </button>`
 
+console.log()
 const createTaskHTML = (id, taskName, description, assignedTo, dueDate, status) => {
     let backgroundColor;
+    const currentPage = location.href.split("/").slice(-1).toString()
+    const otherButtonHTML = `<button class="done-button btn btn-outline-success ${status !== 'DONE' ? 'visible' : 'invisible'}">Mark Done</button>
+        <button class="btn btn-outline-danger delete-button ${status === 'DONE' ? 'visible' : 'invisible'}">Delete</button>`
     switch (status) {
         case "todo":
             backgroundColor = "bg-primary";
@@ -22,8 +26,7 @@ const createTaskHTML = (id, taskName, description, assignedTo, dueDate, status) 
 <div class="card-body">
     <div class="d-flex justify-content-between">
         <p class="card-title mb-0 align-self-center">${taskName}</p>
-        <button class = "done-button btn btn-outline-success ${status !== 'DONE' ? 'visible' : 'invisible'}">Mark Done</button>
-        <button class="btn btn-outline-danger delete-button ${status === 'DONE' ? 'visible' : 'invisible'}">Delete</button>
+        ${currentPage === 'manage.html' ? editButtonHTML : otherButtonHTML}
     </div>
     <div>
         <p class="card-subtitle">Assignee: ${assignedTo}</p>
