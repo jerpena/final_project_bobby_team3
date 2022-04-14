@@ -2,6 +2,12 @@ const manageTasks = new TaskManager()
 manageTasks.load();
 manageTasks.render();
 const form = document.getElementById('taskForm')
+let taskName = form.taskName.value;
+const description = form.taskDescription.value;
+const assignedTo = form.taskAssignedTo.value;
+const dueDate = form.taskDue.value;
+const status = form.taskStatus.value;
+const errorMsg = document.getElementById('error-msg')
 
 const toggleActiveClass = element => {
     let icon = element.querySelector('i')
@@ -17,8 +23,7 @@ const validFormFieldInput = event => {
     const status = form.taskStatus.value;
     const errorMsg = document.getElementById('error-msg')
 
-
-    if (!taskName || !description || !assignedTo || !dueDate || !status) {
+    if (!taskName || !description || !assignedTo || !dueDate || !status)  {
         errorMsg.innerHTML = 'Invalid input in one or more fields.';
         errorMsg.style.display = 'block';
 
@@ -44,7 +49,7 @@ taskListDiv.addEventListener('click', (event) => {
     if (event.target.classList.contains('done-button')) {
         const parentTask = event.target.parentElement.parentElement.parentElement;
         const taskId = Number(parentTask.dataset.taskId);
-        const task = manageTasks.getTaskById(taskId)
+        const task = manageTasks.getTaskById(taskId);
         task.status = "DONE";
         manageTasks.save();
         manageTasks.render();
@@ -58,5 +63,15 @@ taskListDiv.addEventListener('click', (event) => {
         manageTasks.render();
     }
 
+    if (event.target.classList.contains('button-edit')) {
+        const parentTask = event.target.parentElement.parentElement.parentElement;
+        const taskId = Number(parentTask.dataset.taskId);
+        const task = manageTasks.getTaskById(taskId);
+        form.taskName.value = task.taskName;
+        form.taskDescription.value = task.description;
+        form.taskAssignedTo.value = task.assignedTo;
+        form.taskDue.value = task.dueDate;
+        //manageTasks.save();
+        //manageTasks.render();
+    }
 });
-
