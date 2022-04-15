@@ -1,54 +1,48 @@
 const manageTasks = new TaskManager()
 manageTasks.load();
 manageTasks.render();
-const form = document.getElementById('taskForm')
-let taskName = form.taskName.value;
-const description = form.taskDescription.value;
-const assignedTo = form.taskAssignedTo.value;
-const dueDate = form.taskDue.value;
-const status = form.taskStatus.value;
-const errorMsg = document.getElementById('error-msg')
 
-const toggleActiveClass = element => {
-    let icon = element.querySelector('i')
-    icon.classList.toggle('active');
-}
+const form = document.getElementById('taskForm')
 
 const validFormFieldInput = event => {
     event.preventDefault();
+    const currentPage = getCurrentPage();
     const taskName = form.taskName.value;
     const description = form.taskDescription.value;
     const assignedTo = form.taskAssignedTo.value;
     const dueDate = form.taskDue.value;
     const status = form.taskStatus.value;
     const errorMsg = document.getElementById('error-msg')
+    const taskId = Number(form.taskId.value);
 
-    if (!taskName || !description || !assignedTo || !dueDate || !status)  {
+    if (!taskName || !description || !assignedTo || !dueDate || !status) {
         errorMsg.innerHTML = 'Invalid input in one or more fields.';
         errorMsg.style.display = 'block';
-
-    } else {
-        manageTasks.addTask(taskName, description, assignedTo, dueDate, status);
-        manageTasks.render();
-        manageTasks.save();
-        errorMsg.style.display = 'none';
-        form.taskName.value = '';
-        form.taskDescription.value = '';
-        form.taskAssignedTo.value = '';
-        form.taskDue.value = '';
+        return
     }
-}
 
+    (currentPage === 'manage.html') ? manageTasks.editTask(taskId, taskName, description, assignedTo, dueDate, status) :
+        manageTasks.addTask(taskName, description, assignedTo, dueDate, status);
+
+    manageTasks.render();
+    manageTasks.save();
+    errorMsg.style.display = 'none';
+    form.taskName.value = '';
+    form.taskDescription.value = '';
+    form.taskAssignedTo.value = '';
+    form.taskDue.value = '';
+    modal('hide')
+}
 
 
 form.addEventListener('submit', validFormFieldInput);
 
 const taskListDiv = document.querySelector("#task-list");
 taskListDiv.addEventListener('click', (event) => {
+    const parentTask = event.target.parentElement.parentElement.parentElement;
+    const taskId = Number(parentTask.dataset.taskId);
 
     if (event.target.classList.contains('done-button')) {
-        const parentTask = event.target.parentElement.parentElement.parentElement;
-        const taskId = Number(parentTask.dataset.taskId);
         const task = manageTasks.getTaskById(taskId);
         task.status = "DONE";
         manageTasks.save();
@@ -56,22 +50,18 @@ taskListDiv.addEventListener('click', (event) => {
     }
 
     if (event.target.classList.contains('delete-button')) {
-        const parentTask = event.target.parentElement.parentElement.parentElement;
-        const taskId = Number(parentTask.dataset.taskId);
         manageTasks.deleteTask(taskId);
         manageTasks.save();
         manageTasks.render();
     }
 
     if (event.target.classList.contains('button-edit')) {
-        const parentTask = event.target.parentElement.parentElement.parentElement;
-        const taskId = Number(parentTask.dataset.taskId);
         const task = manageTasks.getTaskById(taskId);
+        form.taskId.value = taskId
         form.taskName.value = task.taskName;
         form.taskDescription.value = task.description;
         form.taskAssignedTo.value = task.assignedTo;
         form.taskDue.value = task.dueDate;
-        //manageTasks.save();
-        //manageTasks.render();
+        form.taskStatus.value = task.status;
     }
 });
