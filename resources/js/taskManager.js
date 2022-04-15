@@ -1,14 +1,18 @@
 const getCurrentPage = () => {
+    // split url and get current page
     return location.href.split("/").slice(-1).toString()
 }
 
 const createTaskHTML = (id, taskName, description, assignedTo, dueDate, status) => {
     let backgroundColor;
     const currentPage = getCurrentPage();
-    const otherButtonHTML = `<button class="done-button btn btn-outline-success ${status !== 'DONE' ? 'visible' : 'invisible'}">Mark Done</button>
+    // html for done/delete buttons on card
+    const cardButtonHTML = `<button class="done-button btn btn-outline-success ${status !== 'DONE' ? 'visible' : 'invisible'}">Mark Done</button>
         <button class="btn btn-outline-danger delete-button ${status === 'DONE' ? 'visible' : 'invisible'}">Delete</button>`
+    // html for edit button on card
     const editButtonHTML = `<button type="button" class="button-edit btn btn-outline-dark" data-bs-toggle="modal"
                             data-bs-target="#staticBackdrop">Edit</button>`
+    // change background color based on status
     switch (status) {
         case "TODO":
             backgroundColor = "bg-primary";
@@ -28,7 +32,7 @@ const createTaskHTML = (id, taskName, description, assignedTo, dueDate, status) 
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <p class="card-title mb-0 align-self-center">${taskName}</p>
-                        ${currentPage === 'manage.html' ? editButtonHTML : otherButtonHTML}
+                        ${currentPage === 'manage.html' ? editButtonHTML : cardButtonHTML}
                     </div>
                     <div>
                         <p class="card-subtitle">Assignee: ${assignedTo}</p>
@@ -42,8 +46,7 @@ const createTaskHTML = (id, taskName, description, assignedTo, dueDate, status) 
             </div>`
 }
 
-
-
+// create task manager class
 class TaskManager {
     constructor() {
         this._tasks = []
@@ -117,14 +120,14 @@ class TaskManager {
 
     deleteTask(taskId) {
         const newTasks = [];
-
+        // create new array of tasks without the id supplied
         this._tasks.forEach(task => {
             if (task.id !== taskId) newTasks.push(task)
         })
-
+        // set new task list
         this._tasks = newTasks;
     }
-
+    // editing task props
     editTask(id, taskName, description, assignedTo, dueDate, status) {
         const task = this.getTaskById(id)
         task.taskName = taskName;

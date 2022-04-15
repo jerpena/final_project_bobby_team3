@@ -18,7 +18,7 @@
         <!-- Navigation bar  Bootstrap 5 modified -->
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="resources/images/logo.png"></a>
+                <a class="navbar-brand" href="index.html"><img src="resources/images/logo.png"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -49,25 +49,26 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Add Task</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Add Task<span class='text-danger'>*</span></h5>
                     </div>
                     <div class="modal-body">
                         <form role="form" id='taskForm'>
                             <div class="form-group">
-                                <label for="taskName">Task Name</label>
+                                <label for="taskName">Task Name<span class='text-danger'>*</span></label>
                                 <input type="text" class="form-control" id="taskName" name="taskName">
                             </div>
-                            <div class="form-group mt-3">
-                                <label for="taskDescription">Description</label>
-                                <textarea class="form-control" id="taskDescription" rows="3" maxlength="60"
+                            <div class="form-group mt-2">
+                                <label for="taskDescription">Description (max characters: 80)<span
+                                        class='text-danger'>*</span></label>
+                                <textarea class="form-control" id="taskDescription" rows="3" maxlength="80"
                                     name="taskDescription"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="taskAssignedTo">Assigned To</label>
+                            <div class="form-group mt-2">
+                                <label for="taskAssignedTo">Assigned To<span class='text-danger'>*</span></label>
                                 <input type="text" class="form-control" id="taskAssignedTo" name="taskAssignedTo">
                             </div>
-                            <div class="form-group">
-                                <label for="taskStatus">Task Status</label>
+                            <div class="form-group mt-2">
+                                <label for="taskStatus">Task Status<span class='text-danger'>*</span></label>
                                 <select class="form-control" id="taskStatus" name="taskStatus">
                                     <option value="TODO">TODO</option>
                                     <option value="IN PROGRESS">In Progress</option>
@@ -75,15 +76,15 @@
                                     <option value="DONE">Done</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="taskDue">Due Date:</label>
+                            <div class="form-group mt-2">
+                                <label for="taskDue">Due Date<span class='text-danger'>*</span></label>
                                 <input type="date" class="form-control" id="taskDue" name="taskDue">
                                 <p id="error-msg" name='error-msg' class="alert alert-danger"></p>
                             </div>
                             <div class="form-group mt-4">
                                 <input type="hidden" id="taskId" value="">
                                 <button type="submit" class="btn btn-outline-success">Add Task</button>
-                                <button type="button" class="btn btn-outline-secondary"
+                                <button type="button" id="cancel" class="btn btn-outline-secondary"
                                     data-bs-dismiss="modal">Cancel</button>
                             </div>
                         </form>
@@ -190,13 +191,14 @@
             <!-- END NEW CARD LAYOUT -->
         </div>
     </div>
-    <!-- Load  taskmanager -->
-    <script src="resources/js/taskManager.js"></script>
-    <script src="resources/js/index.js"></script>
+
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <!-- Load  taskmanager -->
+    <script src="resources/js/taskManager.js"></script>
+    <script src="resources/js/index.js"></script>
 </body>
 
 </html>
