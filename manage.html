@@ -25,14 +25,17 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-success" href="index.html"><button class = "btn btn-dark text-success">Home</button></a>
+                            <a class="nav-link text-success" href="index.html"><button
+                                    class="btn btn-dark text-success">Home</button></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-success" aria-current="page" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop"><button class = "btn btn-dark text-success">Add</button></a>
+                                data-bs-target="#staticBackdrop"><button
+                                    class="btn btn-dark text-success">Add</button></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link text-success" href="manage.html"><button class = "btn btn-dark text-success">Manage</button></a>
+                            <a class="nav-link text-success" href="manage.html"><button
+                                    class="btn btn-dark text-success">Manage</button></a>
                         </li>
                     </ul>
                 </div>
@@ -45,42 +48,45 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Edit Task</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Add Task</h5>
                     </div>
                     <div class="modal-body">
                         <form role="form" id='taskForm'>
                             <div class="form-group">
-                                <label for="taskName">Task Name</label>
+                                <label for="taskName">Task Name<span class='text-danger'>*</span></label>
                                 <input type="text" class="form-control" id="taskName" name="taskName">
                             </div>
-                            <div class="form-group mt-3">
-                                <label for="taskDescription">Description</label>
-                                <textarea class="form-control" id="taskDescription" rows="3"
+                            <div class="form-group mt-2">
+                                <label for="taskDescription">Description (max characters: 80)<span
+                                        class='text-danger'>*</span></label>
+                                <textarea class="form-control" id="taskDescription" rows="3" maxlength="80"
                                     name="taskDescription"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="taskAssignedTo">Assigned To</label>
+                            <div class="form-group mt-2">
+                                <label for="taskAssignedTo">Assigned To<span class='text-danger'>*</span></label>
                                 <input type="text" class="form-control" id="taskAssignedTo" name="taskAssignedTo">
                             </div>
-                            <div class="form-group">
-                                <label for="taskStatus">Task Status</label>
+                            <div class="form-group mt-2">
+                                <label for="taskStatus">Task Status<span class='text-danger'>*</span></label>
                                 <select class="form-control" id="taskStatus" name="taskStatus">
-                                    <option value="todo">TODO</option>
-                                    <option value="inProgress">In Progress</option>
-                                    <option value="review">Review</option>
-                                    <option value="done">Done</option>
+                                    <option value="TODO">TODO</option>
+                                    <option value="IN PROGRESS">In Progress</option>
+                                    <option value="REVIEW">Review</option>
+                                    <option value="DONE">Done</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="taskDue">Due Date:</label>
+                            <div class="form-group mt-2">
+                                <label for="taskDue">Due Date<span class='text-danger'>*</span></label>
                                 <input type="date" class="form-control" id="taskDue" name="taskDue">
                                 <p id="error-msg" name='error-msg' class="alert alert-danger"></p>
                             </div>
                             <div class="form-group mt-4">
+                                <input type="hidden" id="taskId" value="">
                                 <button type="submit" class="btn btn-outline-success">Save</button>
-                                <button type="button" class="btn btn-outline-secondary"
+                                <button type="button" id="cancel" class="btn btn-outline-secondary"
                                     data-bs-dismiss="modal">Cancel</button>
-                                <button class="btn btn-outline-danger delete-button">Delete</button>
+                                <button type="button" id="delete"
+                                    class="btn btn-outline-danger delete-button">Delete</button>
                             </div>
                         </form>
                     </div>

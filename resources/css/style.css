@@ -73,6 +73,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 0.2rem;
+  height: 100%;
 }
 
 /* Code I added */
@@ -140,13 +141,13 @@ h1 {
 
 /* Anything below 479px hide description and user then set margin for footer */
 @media only screen and (max-width: 479px) {
-  .card-text {
+  /* .card-text {
     display: none;
   }
 
   .card-subtitle {
     display: none;
-  }
+  } */
 
   .task-footer {
     margin-top: 10px;
@@ -182,7 +183,6 @@ h1 {
 
   .task-footer {
     margin-top: auto;
-    bottom: 0;
   }
 }
 

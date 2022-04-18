@@ -1,77 +1,116 @@
+// initialize taskmanager class
 const manageTasks = new TaskManager()
 manageTasks.load();
 manageTasks.render();
-const form = document.getElementById('taskForm')
-let taskName = form.taskName.value;
-const description = form.taskDescription.value;
-const assignedTo = form.taskAssignedTo.value;
-const dueDate = form.taskDue.value;
-const status = form.taskStatus.value;
-const errorMsg = document.getElementById('error-msg')
 
-const toggleActiveClass = element => {
-    let icon = element.querySelector('i')
-    icon.classList.toggle('active');
+// [ GLOBALS ]
+
+// get modal and form elements
+const modal = document.getElementById('staticBackdrop');
+const modalTitle = document.getElementById('staticBackdropLabel')
+const form = document.getElementById('taskForm');
+const cancelButton = document.getElementById('cancel');
+const formDeleteButton = document.getElementById('delete');
+const errorMsg = document.getElementById('error-msg')
+// get div for tasks
+const taskListDiv = document.querySelector("#task-list");
+
+
+// [ FUNCTIONS ]
+
+const resetFormInputs = () => {
+    errorMsg.style.display = 'none';
+    form.dataset.editing = '';
+    modalTitle.innerHTML = 'Add Task'
+    form.taskName.value = '';
+    form.taskDescription.value = '';
+    form.taskAssignedTo.value = '';
+    form.taskStatus.value = 'TODO'
+    form.taskDue.value = '';
+    form.taskId.value = '';
 }
 
-const validFormFieldInput = event => {
+const submitForm = event => {
     event.preventDefault();
+    // convert data-editing value to boolean
+    const editingTask = !!form.dataset.editing;
+    // get form field values
     const taskName = form.taskName.value;
     const description = form.taskDescription.value;
     const assignedTo = form.taskAssignedTo.value;
     const dueDate = form.taskDue.value;
     const status = form.taskStatus.value;
-    const errorMsg = document.getElementById('error-msg')
+    const taskId = Number(form.taskId.value);
+    // get the modal instance
+    const formModal = bootstrap.Modal.getInstance(modal)
 
-    if (!taskName || !description || !assignedTo || !dueDate || !status)  {
+    // validate input
+    if (!taskName || !description || !assignedTo || !dueDate || !status) {
         errorMsg.innerHTML = 'Invalid input in one or more fields.';
         errorMsg.style.display = 'block';
-
-    } else {
-        manageTasks.addTask(taskName, description, assignedTo, dueDate, status);
-        manageTasks.render();
-        manageTasks.save();
-        errorMsg.style.display = 'none';
-        form.taskName.value = '';
-        form.taskDescription.value = '';
-        form.taskAssignedTo.value = '';
-        form.taskDue.value = '';
+        return
     }
+
+    // check if editing a task
+    (editingTask) ? manageTasks.editTask(taskId, taskName, description, assignedTo, dueDate, status) :
+        manageTasks.addTask(taskName, description, assignedTo, dueDate, status);
+
+    manageTasks.render();
+    manageTasks.save();
+    resetFormInputs()
+    // hide modal
+    formModal.hide()
 }
 
+// [ EVENT LISTENERS ]
 
+form.addEventListener('submit', submitForm);
 
-form.addEventListener('submit', validFormFieldInput);
+cancelButton.addEventListener('click', resetFormInputs)
 
-const taskListDiv = document.querySelector("#task-list");
+if (getCurrentPage() === 'manage.html') {
+    formDeleteButton.addEventListener('click', () => {
+        const formModal = bootstrap.Modal.getInstance(modal)
+        const taskId = Number(form.taskId.value)
+        manageTasks.deleteTask(taskId);
+        manageTasks.save();
+        manageTasks.render();
+        formModal.hide();
+    })
+}
+
 taskListDiv.addEventListener('click', (event) => {
+    const parentTask = event.target.parentElement.parentElement.parentElement;
+    const taskId = Number(parentTask.dataset.taskId);
 
+    // check if done-button on card clicked
     if (event.target.classList.contains('done-button')) {
-        const parentTask = event.target.parentElement.parentElement.parentElement;
-        const taskId = Number(parentTask.dataset.taskId);
         const task = manageTasks.getTaskById(taskId);
         task.status = "DONE";
         manageTasks.save();
         manageTasks.render();
     }
 
+    // check if delete-button on card clicked
     if (event.target.classList.contains('delete-button')) {
-        const parentTask = event.target.parentElement.parentElement.parentElement;
-        const taskId = Number(parentTask.dataset.taskId);
         manageTasks.deleteTask(taskId);
         manageTasks.save();
         manageTasks.render();
     }
 
+    // check if edit-button clicked
     if (event.target.classList.contains('button-edit')) {
-        const parentTask = event.target.parentElement.parentElement.parentElement;
-        const taskId = Number(parentTask.dataset.taskId);
         const task = manageTasks.getTaskById(taskId);
+        // set title for modal
+        modalTitle.innerHTML = 'Edit Task'
+        // set data attribute
+        form.dataset.editing = true;
+        // set form values 
+        form.taskId.value = taskId
         form.taskName.value = task.taskName;
         form.taskDescription.value = task.description;
         form.taskAssignedTo.value = task.assignedTo;
         form.taskDue.value = task.dueDate;
-        //manageTasks.save();
-        //manageTasks.render();
+        form.taskStatus.value = task.status;
     }
 });
