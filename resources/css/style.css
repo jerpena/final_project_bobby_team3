@@ -1,15 +1,7 @@
-/* Code I added */
 body {
-  background: url(/resources/Backgroundpic2.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   height: 100vh;
-  /* width: 100%; */
+  background-color: #e9dfdf;
   margin: 0 auto;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   box-sizing: border-box;
 }
 
@@ -61,7 +53,6 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.125);
   min-width: 270px;
   width: auto;
-  /* width: 20vw; need to delete this once grid is done for main page */
 }
 
 .card-title {
@@ -76,7 +67,6 @@ body {
   height: 100%;
 }
 
-/* Code I added */
 .container-card {
   display: flex;
 }
@@ -139,16 +129,7 @@ h1 {
   font-weight: bold;
 }
 
-/* Anything below 479px hide description and user then set margin for footer */
 @media only screen and (max-width: 479px) {
-  /* .card-text {
-    display: none;
-  }
-
-  .card-subtitle {
-    display: none;
-  } */
-
   .task-footer {
     margin-top: 10px;
   }
