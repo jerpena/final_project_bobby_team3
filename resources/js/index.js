@@ -1,22 +1,15 @@
-// initialize taskmanager class
 const manageTasks = new TaskManager()
 manageTasks.load();
 manageTasks.render();
 
-// [ GLOBALS ]
-
-// get modal and form elements
 const modal = document.getElementById('staticBackdrop');
 const modalTitle = document.getElementById('staticBackdropLabel')
 const form = document.getElementById('taskForm');
 const cancelButton = document.getElementById('cancel');
 const formDeleteButton = document.getElementById('delete');
 const errorMsg = document.getElementById('error-msg')
-// get div for tasks
 const taskListDiv = document.querySelector("#task-list");
 
-
-// [ FUNCTIONS ]
 
 const resetFormInputs = () => {
     errorMsg.style.display = 'none';
@@ -32,19 +25,16 @@ const resetFormInputs = () => {
 
 const submitForm = event => {
     event.preventDefault();
-    // convert data-editing value to boolean
     const editingTask = !!form.dataset.editing;
-    // get form field values
     const taskName = form.taskName.value;
     const description = form.taskDescription.value;
     const assignedTo = form.taskAssignedTo.value;
     const dueDate = form.taskDue.value;
     const status = form.taskStatus.value;
     const taskId = Number(form.taskId.value);
-    // get the modal instance
     const formModal = bootstrap.Modal.getInstance(modal)
 
-    // validate input
+
     if (!taskName || !description || !assignedTo || !dueDate || !status) {
         errorMsg.innerHTML = 'Invalid input in one or more fields.';
         errorMsg.style.display = 'block';
@@ -62,7 +52,6 @@ const submitForm = event => {
     formModal.hide()
 }
 
-// [ EVENT LISTENERS ]
 
 form.addEventListener('submit', submitForm);
 

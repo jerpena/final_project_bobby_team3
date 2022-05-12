@@ -46,7 +46,6 @@ const createTaskHTML = (id, taskName, description, assignedTo, dueDate, status) 
             </div>`
 }
 
-// create task manager class
 class TaskManager {
     constructor() {
         this._tasks = []
@@ -86,6 +85,11 @@ class TaskManager {
         }
         const tasksHtml = tasksHtmlList.join('\n')
         document.getElementById('task-list').innerHTML = tasksHtml
+        if (tasksHtml.length !== 0) {
+            document.querySelector('.intro').classList.add('invisible')
+        } else {
+            document.querySelector('.intro').classList.remove('invisible')
+        }
     }
 
     getTaskById(taskId) {
